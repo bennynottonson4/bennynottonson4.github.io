@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>LockScreenEnabled</key>
+	<true/>
+	<key>SpringBoardEnabled</key>
+	<true/>
+	<key>homeBackground</key>
+	<string>#FF0000:1.000000</string>
+	<key>homeText</key>
+	<string>#FF0000:1.000000</string>
+	<key>lockBackground</key>
+	<string>#FF0000:1.000000</string>
+	<key>lockText</key>
+	<string>#FF0000:1.000000</string>
+</dict>
+</plist>
