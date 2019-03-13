@@ -1,0 +1,14 @@
+Package: com.BennyNottonson.CrimsonGlyph
+Version: 1.0
+Architecture: iphoneos-arm
+Maintainer: BennyNottonson <bennynottonson@verizon.net>
+Depends: Flashback
+Filename: /CrimsonGlyph.deb
+Size: 4666234
+MD5sum: 8f99ad332b16d89a4f5474ec4ec7c22e
+SHA1: 6887827ebc209b45df30b6b7473e4c67b6ec2a2b
+SHA256: 6441d336c72bffd4ee38e20fbfa74d8d607f1ee872404eef2a9da92b865b328f
+Section: Themes
+Description: A Test iOS Theme
+Author: BennyNottonson <bennynottonson@verizon.net>
+Name: CrimsonGlyph

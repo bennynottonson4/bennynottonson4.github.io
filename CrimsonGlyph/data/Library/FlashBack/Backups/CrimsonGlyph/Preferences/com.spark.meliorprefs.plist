@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>BackgroundColour</key>
+	<string>#FF0000:1.000000</string>
+	<key>GlyphColour</key>
+	<string>#000000:1.000000</string>
+	<key>SliderMaxColour</key>
+	<string>#FFFFFF:1.000000</string>
+	<key>SliderMinColour</key>
+	<string>#000000:1.000000</string>
+	<key>SliderThumbColour</key>
+	<string>#FF0000:1.000000</string>
+	<key>UseCustomColour</key>
+	<false/>
+	<key>UseSolidColour</key>
+	<true/>
+</dict>
+</plist>

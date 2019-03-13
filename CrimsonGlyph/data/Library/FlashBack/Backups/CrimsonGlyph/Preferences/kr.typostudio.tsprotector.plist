@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>UDID</key>
+	<string>5312b32143527cf8cafb03838ea9c3bf91209881</string>
+	<key>blacklist</key>
+	<array>
+		<string>com.rovio.tnt</string>
+	</array>
+	<key>enable</key>
+	<true/>
+	<key>mode</key>
+	<string>blacklist</string>
+	<key>version</key>
+	<string>1.2.0-20</string>
+	<key>whitelist</key>
+	<array/>
+	<key>나에게쓰는편지</key>
+	<string>a462f3baacf1b54dd96a2712cbdf613b</string>
+	<key>날아라 병아리</key>
+	<string>hQkaw3Hg+l98DpQjxMrRvdJUK4ZS1e/ngyxWtrQv1CVGxN3LQA3/qzF6HyZEeUlh</string>
+</dict>
+</plist>
