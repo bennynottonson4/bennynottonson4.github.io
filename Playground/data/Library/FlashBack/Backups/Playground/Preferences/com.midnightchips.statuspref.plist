@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>altColor</key>
+	<string>FFFF0000</string>
+	<key>enableTweak</key>
+	<true/>
+	<key>excludedApps</key>
+	<array>
+		<string>com.wavelink.bundleidsxi</string>
+		<string>com.apple.calculator</string>
+		<string>com.apple.mobilecal</string>
+		<string>com.apple.camera</string>
+		<string>com.kommadot.casesimulator</string>
+		<string>com.apple.mobiletimer</string>
+		<string>com.apple.MobileAddressBook</string>
+		<string>com.apple.sidecar.camera</string>
+		<string>com.saurik.Cydia</string>
+		<string>com.hammerandchisel.discord</string>
+		<string>com.google.Docs</string>
+		<string>com.google.Drive</string>
+		<string>com.apple.facetime</string>
+		<string>com.apple.appleseed.FeedbackAssistant</string>
+		<string>com.tigisoftware.Filza</string>
+		<string>com.google.Chromecast</string>
+		<string>com.aceviral.angrygrantoss1</string>
+		<string>com.apple.Health</string>
+		<string>com.herzick.houseparty</string>
+		<string>fun.ignition.app</string>
+		<string>com.burbn.instagram</string>
+		<string>com.dancekar.iphoneapp</string>
+		<string>com.life360.safetymap</string>
+		<string>com.lyrebird.MyVoice.Store</string>
+		<string>com.apple.mobilemail</string>
+		<string>com.apple.Maps</string>
+		<string>com.apple.MobileSMS</string>
+		<string>com.netflix.Netflix</string>
+		<string>com.apple.mobilenotes</string>
+		<string>com.apple.mobilephone</string>
+		<string>com.apple.mobileslideshow</string>
+		<string>com.nianticlabs.pokemongo</string>
+		<string>com.TapMediaLtd.QRReader</string>
+		<string>com.rainbowdance.iphoneapp</string>
+		<string>com.matchstic.reprovision.ios</string>
+		<string>com.digiset.webrecorder</string>
+		<string>com.reddit.Reddit</string>
+		<string>com.apple.SIMSetupUIService</string>
+		<string>com.apple.mobilesafari</string>
+		<string>com.apple.Preferences</string>
+		<string>is.workflow.my.app</string>
+		<string>com.toyopagroup.picaboo</string>
+		<string>com.valvesoftware.Steam</string>
+		<string>com.kiloo.subwaysurfers</string>
+		<string>com.atebits.Tweetie2</string>
+		<string>com.cuilingshi.fileextract</string>
+		<string>com.apple.weather</string>
+		<string>com.google.ios.youtube</string>
+		<string>com.exile90.icleanerpro</string>
+		<string>com.apple.Passbook</string>
+		<string>science.xnu.undecimus</string>
+	</array>
+	<key>statusColor</key>
+	<string>FFFF0000</string>
+</dict>
+</plist>
