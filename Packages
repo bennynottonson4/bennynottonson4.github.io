@@ -2,7 +2,7 @@ Package: com.BennyNottonson.CrimsonGlyph
 Version: 1.0
 Architecture: iphoneos-arm
 Maintainer: BennyNottonson <bennynottonson@verizon.net>
-Depends: 
+Depends: MTerminal
 Filename: /CrimsonGlyph.deb
 Size: 4666234
 MD5sum: 8f99ad332b16d89a4f5474ec4ec7c22e
