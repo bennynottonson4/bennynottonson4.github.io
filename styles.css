@@ -92,3 +92,6 @@ a {
   background-color: lightblue;
   margin-top: 20px;
 }
+a button {
+  color:red;
+}
