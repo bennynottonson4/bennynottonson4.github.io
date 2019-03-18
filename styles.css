@@ -27,6 +27,7 @@ ul {
   overflow: hidden;
   background-color: #333333;
   color: #ff0000
+  opacity: 0.5;
 }
 li a {
   display: block;
