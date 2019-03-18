@@ -25,9 +25,7 @@ ul {
   margin: 0;
   padding: 0;
   overflow: hidden;
-  background-color: #3ca2c8;
   color: #f9c6d7;
-  opacity: 0.5;
 }
 li a {
   display: block;
