@@ -78,7 +78,7 @@ table#t01 th {
   color: white;
 }
 body {
-  background-color: grey;
+  background-image: url(background.jpeg);
 }
 a {
   background: -webkit-linear-gradient(#ff0000, #000000);
