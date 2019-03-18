@@ -6,6 +6,7 @@ h1 {
   position: relative;
   margin: auto;
   width: 1100px;
+  font-weight: bold;
 }
 h2 {
   font-size: 40px;
@@ -13,6 +14,7 @@ h2 {
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   margin: auto;
+  font-weight: bold;
 }
 .center {
   display: block;
@@ -37,6 +39,7 @@ li a {
    background: -webkit-linear-gradient(#4d4dff, #f9c6d7);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
+  font-weight: bold;
 }
 li p {
   text-decoration: underline dotted blue;
@@ -44,27 +47,7 @@ li p {
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   font-size: 20px;
-}
-table {
-  width:100%;
-}
-table, th, td {
-  border: 1px solid black;
-  border-collapse: collapse;
-}
-th, td {
-  padding: 15px;
-  text-align: left;
-}
-table#t01 tr:nth-child(even) {
-  background-color: #f9c6d7;
-}
-table#t01 tr:nth-child(odd) {
- background-color: #4d4dff;
-}
-table#t01 th {
-  background-color: blue;
-  color: purple;
+  font-weight: bold;
 }
 body {
   background-image: url(background.jpg);
@@ -73,6 +56,7 @@ a {
   background: -webkit-linear-gradient(#4d4dff, #f9c6d7);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
+  font-weight: bold;
 }
 #myDIV {
   width: 100%;
@@ -100,7 +84,7 @@ ul#horizontal-list {
 		display: inline;
 	}
 img {
-  opacity: 0.5;
+  opacity: 0.25;
   filter: alpha(opacity=15); /* For IE8 and earlier */
 }
 
