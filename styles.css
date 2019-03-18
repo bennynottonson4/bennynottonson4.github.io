@@ -103,7 +103,7 @@ ul#horizontal-list {
 	}
 img {
   opacity: 0.5;
-  filter: alpha(opacity=50); /* For IE8 and earlier */
+  filter: alpha(opacity=15); /* For IE8 and earlier */
 }
 
 img:hover {
