@@ -32,14 +32,10 @@ li a {
   display: block;
   color: white;
   text-align: center;
-  padding: 17.5px 229px;
   text-decoration: none;
   float: left;
   font-size: 20px;
-}
-
-li a:hover {
-  background: -webkit-linear-gradient(#ff0000, #ffffff);
+   background: -webkit-linear-gradient(#ff0000, #ffffff);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
@@ -51,10 +47,10 @@ li p {
   font-size: 20px;
 }
   ::selection {
-  background: #ffb7b7; /* WebKit/Blink Browsers */
+  background: #ffb7b7;
 }
   ::-moz-selection {
-  background: #ffb7b7; /* Gecko Browsers */
+  background: #ffb7b7;
 }
 table {
   width:100%;
@@ -92,3 +88,24 @@ a {
   background-color: lightblue;
   margin-top: 20px;
 }
+a button {
+  color:red;
+}
+#menu-outer {
+	height: 84px;
+	background: url(images/bar-bg.jpg) repeat-x;
+}
+
+.table {
+	display: table;   /* Allow the centering to work */
+	margin: 0 auto;
+}
+
+ul#horizontal-list {
+	min-width: 696px;
+	list-style: none;
+	padding-top: 20px;
+	}
+	ul#horizontal-list li {
+		display: inline;
+	}
