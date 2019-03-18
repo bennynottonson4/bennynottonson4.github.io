@@ -1,6 +1,6 @@
 h1 {
   font-size: 50px;
-  background: -webkit-linear-gradient(#3ca2c8, #f9c6d7);
+  background: -webkit-linear-gradient(#003366, #f9c6d7);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   position: relative;
@@ -9,7 +9,7 @@ h1 {
 }
 h2 {
   font-size: 40px;
-  background: -webkit-linear-gradient(#3ca2c8, #f9c6d7);
+  background: -webkit-linear-gradient(#003366, #f9c6d7);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   margin: auto;
@@ -34,13 +34,13 @@ li a {
   text-decoration: none;
   float: left;
   font-size: 20px;
-   background: -webkit-linear-gradient(#3ca2c8, #f9c6d7);
+   background: -webkit-linear-gradient(#003366, #f9c6d7);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 li p {
   text-decoration: underline dotted blue;
-  background: -webkit-linear-gradient(#3ca2c8, #f9c6d7);
+  background: -webkit-linear-gradient(#003366, #f9c6d7);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   font-size: 20px;
@@ -60,7 +60,7 @@ table#t01 tr:nth-child(even) {
   background-color: #f9c6d7;
 }
 table#t01 tr:nth-child(odd) {
- background-color: #3ca2c8;
+ background-color: #003366;
 }
 table#t01 th {
   background-color: blue;
@@ -70,7 +70,7 @@ body {
   background-image: url(background.jpg);
 }
 a {
-  background: -webkit-linear-gradient(#3ca2c8, #f9c6d7);
+  background: -webkit-linear-gradient(#003366, #f9c6d7);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
