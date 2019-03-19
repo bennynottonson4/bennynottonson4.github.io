@@ -1,25 +1,10 @@
 <!DOCTYPE html>
 
 <html lang="en">
-
 	<head>
-
-
 		<title>HTML5 Snake</title>
-
 		<link href='styles.css' rel='stylesheet' type='text/css'>
-
-
-
 		<script type="text/javascript">
-
-			/**
-			 * @license HTML5 experiment Snake
-			 * http://www.xarg.org/project/html5-snake/
-			 *
-			 * Copyright (c) 2011, Robert Eisele (robert@xarg.org)
-			 * Dual licensed under the MIT or GPL Version 2 licenses.
-			 **/
 			function init() {
 
 				var ctx;
@@ -156,12 +141,6 @@
 
 					var code = e.keyCode - 37;
 
-					/*
-					 * 0: left
-					 * 1: up
-					 * 2: right
-					 * 3: down
-					 **/
 					if (0 <= code && code < 4 && code !== turn[0]) {
 						turn.unshift(code);
 					} else if (-5 == code) {
