@@ -500,3 +500,9 @@ p {
 canvas {
     border: 1px solid white;
   }
+  .night {
+    background-image: url(background2.jpg);
+  }
+   .day {
+    background-image: url(background.jpg);
+  }
