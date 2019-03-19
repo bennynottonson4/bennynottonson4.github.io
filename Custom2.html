@@ -3,22 +3,6 @@
 <head>
   <title></title>
    <link rel="stylesheet" type="text/css" href="styles.css">
-  <link rel="icon" type="image/x-icon href="favicon.ico">
-  <style>
-  html, body {
-    height: 100%;
-    margin: 0;
-  }
-  body {
-   background-image: url(background.jpg);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-  canvas {
-    border: 1px solid white;
-  }
-  </style>
 </head>
 <body>
 	<div id="menu-outer">
@@ -32,7 +16,7 @@
   </ul>
 </div>
 </div>
-<canvas width="400" height="400" id="game"></canvas>
+<canvas width="400" height="400" id="game" class="center"></canvas>
 <script>
 var canvas = document.getElementById('game');
 var context = canvas.getContext('2d');
