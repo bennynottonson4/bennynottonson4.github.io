@@ -88,8 +88,5 @@ ul#horizontal-list {
   background: -webkit-linear-gradient(#4d4dff, #f9c6d7);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  position: relative;
-  margin: auto;
-  width: 600px;
   font-weight: bold;
 }
