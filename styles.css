@@ -71,7 +71,7 @@ a {
 }
 
 .table {
-	display: table;   /* Allow the centering to work */
+	display: table;
 	margin: 0 auto;
 }
 
@@ -79,11 +79,11 @@ ul#horizontal-list {
 	min-width: 696px;
 	list-style: none;
 	padding-top: 20px;
-	}
-	ul#horizontal-list li {
+}
+ul#horizontal-list li {
 		display: inline;
-	}
-  h3 {
+}
+h3 {
   font-size: 20px;
   background: -webkit-linear-gradient(#4d4dff, #f9c6d7);
   -webkit-background-clip: text;
