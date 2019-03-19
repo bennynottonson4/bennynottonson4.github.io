@@ -1,8 +1,8 @@
 html, body {
- background-image: url(background.jpg);
-  color: #776e65;
-      max-width: 100%;
-    overflow-x: hidden;
+ 
+ color: #776e65;
+ max-width: 100%;
+ overflow-x: hidden;
  }
 .heading:after {
   content: "";
