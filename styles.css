@@ -488,3 +488,12 @@ html, body {
   font-size: 1px;
   font-weight: bold;
 }
+tr {
+  color: white;
+}
+td{
+  color: white;
+}
+p {
+  color: white;
+}
