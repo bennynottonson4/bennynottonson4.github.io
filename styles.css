@@ -62,8 +62,7 @@ a {
   width: 100%;
   padding: 50px 0;
   text-align: center;
-  background-color: blue;
-opacity: 25%;
+  background-color: rgba(173,216,230, 0.2)
   margin-top: 20px;
 }
 #menu-outer {
