@@ -94,3 +94,7 @@ h3 {
   margin-right: auto;
   width: 30%;
 }
+html, body {
+    max-width: 100%;
+    overflow-x: hidden;
+}
