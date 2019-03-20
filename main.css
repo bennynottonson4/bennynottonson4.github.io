@@ -780,17 +780,11 @@ ul#horizontal-list {
   list-style: none;
   padding-top: 20px;
 }
-.center2 {
+.center {
   display: block;
   margin-left: auto;
   margin-right: auto;
-  width: 30%;
-}
-.center3 {
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-  width: 20%;
+  width: 40%;
 }
   .night {
     background-image: url(background2.jpg);
