@@ -3,39 +3,39 @@
 <head>
   <meta charset="utf-8">
   <title>2048</title>
-   <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.3.1.min.js"></script>
+  <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.3.1.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-	<script src="//cdnjs.cloudflare.com/ajax/libs/less.js/3.9.0/less.min.js" ></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/less.js/3.9.0/less.min.js" ></script>
   <link href="main.css" rel="stylesheet" type="text/css">
-   <script>
-        function day(){
-            body.className='day';
-        }
-        function night(){
-            body.className='night';
-        }
-    </script>
-    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-<script>
-  (adsbygoogle = window.adsbygoogle || []).push({
-    google_ad_client: "ca-pub-4628387696445502",
-    enable_page_level_ads: true
-  });
-</script>
+  <script>
+    function day(){
+      body.className='day';
+    }
+    function night(){
+      body.className='night';
+    }
+  </script>
+  <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+  <script>
+    (adsbygoogle = window.adsbygoogle || []).push({
+      google_ad_client: "ca-pub-4628387696445502",
+      enable_page_level_ads: true
+    });
+  </script>
 </head>
 <body background="background2" id="body">
-    <div id="menu-outer">
-<div class="table">
-<ul id="horizontal-list">
-  <li><a href="index.html" class="center2">Home</a></li>
-  <li><a href="Custom1.html" class="center2">About</a></li>
-  <li><a href="Repo.html" class="center2">Cydia Repo</a></li> 
-  <li><a href="Custom2.html" class="center2">Snake Game</a></li> 
-  <li><a href="Custom3.html" class="center2">Minesweeper</a></li>
-  <li><a href="Custom4.html" class="center3">2048</a></li>
-  </ul>
-</div>
-</div>
+  <div id="menu-outer">
+    <div class="table">
+      <ul id="horizontal-list">
+        <li><a href="index.html" class="center2">Home</a></li>
+        <li><a href="Custom1.html" class="center2">About</a></li>
+        <li><a href="Repo.html" class="center2">Cydia Repo</a></li> 
+        <li><a href="Custom2.html" class="center2">Snake Game</a></li> 
+        <li><a href="Custom3.html" class="center2">Minesweeper</a></li>
+        <li><a href="Custom4.html" class="center3">2048</a></li>
+      </ul>
+    </div>
+  </div>
   <div class="container">
     <div class="heading">
       <h1 class="title">2048</h1>
@@ -54,55 +54,55 @@
       <div class="game-message">
         <p></p>
         <div class="lower">
-	        <a class="keep-playing-button">Keep going</a>
-          <a class="retry-button">Try again</a>
-        </div>
+         <a class="keep-playing-button">Keep going</a>
+         <a class="retry-button">Try again</a>
+       </div>
+     </div>
+
+     <div class="grid-container">
+      <div class="grid-row">
+        <div class="grid-cell"></div>
+        <div class="grid-cell"></div>
+        <div class="grid-cell"></div>
+        <div class="grid-cell"></div>
       </div>
-
-      <div class="grid-container">
-        <div class="grid-row">
-          <div class="grid-cell"></div>
-          <div class="grid-cell"></div>
-          <div class="grid-cell"></div>
-          <div class="grid-cell"></div>
-        </div>
-        <div class="grid-row">
-          <div class="grid-cell"></div>
-          <div class="grid-cell"></div>
-          <div class="grid-cell"></div>
-          <div class="grid-cell"></div>
-        </div>
-        <div class="grid-row">
-          <div class="grid-cell"></div>
-          <div class="grid-cell"></div>
-          <div class="grid-cell"></div>
-          <div class="grid-cell"></div>
-        </div>
-        <div class="grid-row">
-          <div class="grid-cell"></div>
-          <div class="grid-cell"></div>
-          <div class="grid-cell"></div>
-          <div class="grid-cell"></div>
-        </div>
+      <div class="grid-row">
+        <div class="grid-cell"></div>
+        <div class="grid-cell"></div>
+        <div class="grid-cell"></div>
+        <div class="grid-cell"></div>
       </div>
-
-      <div class="tile-container">
-
+      <div class="grid-row">
+        <div class="grid-cell"></div>
+        <div class="grid-cell"></div>
+        <div class="grid-cell"></div>
+        <div class="grid-cell"></div>
+      </div>
+      <div class="grid-row">
+        <div class="grid-cell"></div>
+        <div class="grid-cell"></div>
+        <div class="grid-cell"></div>
+        <div class="grid-cell"></div>
       </div>
     </div>
-  </div>
 
-  <script src="js/bind_polyfill.js"></script>
-  <script src="js/classlist_polyfill.js"></script>
-  <script src="js/animframe_polyfill.js"></script>
-  <script src="js/keyboard_input_manager.js"></script>
-  <script src="js/html_actuator.js"></script>
-  <script src="js/grid.js"></script>
-  <script src="js/tile.js"></script>
-  <script src="js/local_storage_manager.js"></script>
-  <script src="js/game_manager.js"></script>
-  <script src="js/application.js"></script>
-  <button type="button" onclick="night()" class="btn">Day</button>
-            <button type="button" onclick="day()" class="btn">Night</button>
+    <div class="tile-container">
+
+    </div>
+  </div>
+</div>
+
+<script src="js/bind_polyfill.js"></script>
+<script src="js/classlist_polyfill.js"></script>
+<script src="js/animframe_polyfill.js"></script>
+<script src="js/keyboard_input_manager.js"></script>
+<script src="js/html_actuator.js"></script>
+<script src="js/grid.js"></script>
+<script src="js/tile.js"></script>
+<script src="js/local_storage_manager.js"></script>
+<script src="js/game_manager.js"></script>
+<script src="js/application.js"></script>
+<button type="button" onclick="night()" class="btn">Day</button>
+<button type="button" onclick="day()" class="btn">Night</button>
 </body>
 </html>
