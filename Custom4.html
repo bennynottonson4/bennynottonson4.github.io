@@ -3,9 +3,19 @@
 <head>
   <meta charset="utf-8">
   <title>2048</title>
+   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
   <link href="main.css" rel="stylesheet" type="text/css">
+   <script>
+        function day(){
+            body.className='day';
+        }
+        function night(){
+            body.className='night';
+        }
+    </script>
 </head>
-<body background="background.jpg">
+<body background="background.jpg" id="body">
     <div id="menu-outer">
 <div class="table">
 <ul id="horizontal-list">
@@ -84,5 +94,7 @@
   <script src="js/local_storage_manager.js"></script>
   <script src="js/game_manager.js"></script>
   <script src="js/application.js"></script>
+  <button type="button" onclick="night()" class="btn">Day</button>
+            <button type="button" onclick="day()" class="btn">Night</button>
 </body>
 </html>

@@ -792,3 +792,9 @@ ul#horizontal-list {
   margin-right: auto;
   width: 20%;
 }
+  .night {
+    background-image: url(background2.jpg);
+  }
+   .day {
+    background-image: url(background.jpg);
+  }

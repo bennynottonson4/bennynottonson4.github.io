@@ -3,6 +3,8 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-US">
 <head>
 	<title>Config the Minesweeper</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<meta http-equiv="Content-Language" content="en-US" />
 	<meta content="all" name="robots" />
@@ -12,7 +14,16 @@
 	<meta name="language" content="en-US" />
 	<meta name="keywords" content="" />
 	<link rel="stylesheet" href="styles.css" type="text/css" media="all"  />
+	   <script>
+        function day(){
+            body.className='day';
+        }
+        function night(){
+            body.className='night';
+        }
+    </script>
 	<script language="JavaScript" type="text/javascript">
+
 	<!--
 		function CheckConfigAndStart()
 		{
@@ -64,7 +75,7 @@
 	//-->
 	</script>
 </head>
-<body>
+<body id="body">
 <div id="menu-outer">
 <div class="table">
 <ul id="horizontal-list">
@@ -100,5 +111,7 @@
 </tr>
 </table>
 </form>
+<button type="button" onclick="night()" class="btn">Day</button>
+            <button type="button" onclick="day()" class="btn">Night</button>
 </body>
 </html>
