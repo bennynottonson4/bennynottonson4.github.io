@@ -532,4 +532,13 @@ span { background: -webkit-linear-gradient(#4d4dff, #f9c6d7);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   font-weight: bold;}
-  #disclaimer {color:white; font-size: 10px;}
+ #disclaimer
+{
+    margin-bottom: 1px;
+    margin-left : 1px;
+    width: 200px;
+    height: 200px;
+    position: fixed;
+    bottom: 0;
+    font-size:15px;
+}
