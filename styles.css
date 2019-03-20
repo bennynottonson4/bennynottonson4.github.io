@@ -528,3 +528,7 @@ th { background: -webkit-linear-gradient(#4d4dff, #f9c6d7);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   font-weight: bold;}
+span { background: -webkit-linear-gradient(#4d4dff, #f9c6d7);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-weight: bold;}
