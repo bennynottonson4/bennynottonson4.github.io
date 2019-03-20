@@ -1,13 +1,4 @@
-h1 {
-  font-size: 50px;
-  background: -webkit-linear-gradient(#4d4dff, #f9c6d7);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  position: relative;
-  margin: auto;
-  width: 1100px;
-  font-weight: bold;
-}
+
 h2 {
   font-size: 40px;
   background: -webkit-linear-gradient(#4d4dff, #f9c6d7);
