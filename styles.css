@@ -8,6 +8,7 @@ h1 {
   width: 1100px;
   font-weight: bold;
 }
+
 h2 {
   font-size: 40px;
   background: -webkit-linear-gradient(#4d4dff, #f9c6d7);
@@ -16,12 +17,14 @@ h2 {
   margin: auto;
   font-weight: bold;
 }
+
 .center {
   display: block;
   margin-left: auto;
   margin-right: auto;
   width: 30%;
 }
+
 ul {
   list-style-type: none;
   margin: 0;
@@ -29,6 +32,7 @@ ul {
   overflow: hidden;
   color: #f9c6d7;
 }
+
 li a {
   display: block;
   color: white;
@@ -36,11 +40,12 @@ li a {
   text-decoration: none;
   float: left;
   font-size: 20px;
-   background: -webkit-linear-gradient(#4d4dff, #f9c6d7);
+  background: -webkit-linear-gradient(#4d4dff, #f9c6d7);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   font-weight: bold;
 }
+
 li p {
   text-decoration: underline dotted blue;
   background: -webkit-linear-gradient(#4d4dff, #f9c6d7);
@@ -49,35 +54,40 @@ li p {
   font-size: 20px;
   font-weight: bold;
 }
+
 body {
   background-image: url(background2.jpg);
 }
+
 a {
   background: -webkit-linear-gradient(#4d4dff, #f9c6d7);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   font-weight: 2000;
 }
+
 #myDIV {
   width: 100%;
   padding: 50px 0;
   text-align: center;
-  background-color: rgba(173,216,230, 0.4)
-  margin-top: 20px;
+  background-color: rgba(173, 216, 230, 0.4) margin-top: 20px;
 }
+
 #menu-outer {
-	height: 84px;
+  height: 84px;
 }
 
 .table {
-	display: table;
-	margin: 0 auto;
+  display: table;
+  margin: 0 auto;
 }
+
 ul#horizontal-list {
-	min-width: 696px;
-	list-style: none;
-	padding-top: 20px;
+  min-width: 696px;
+  list-style: none;
+  padding-top: 20px;
 }
+
 h3 {
   font-size: 25px;
   background: -webkit-linear-gradient(#4d4dff, #f9c6d7);
@@ -87,11 +97,14 @@ h3 {
   margin: auto;
   width: 1100px;
 }
-html, body {
-    max-width: 100%;
-    overflow-x: hidden;
+
+html,
+body {
+  max-width: 100%;
+  overflow-x: hidden;
 }
-.button_up{
+
+.button_up {
   text-align: center;
   vertical-align: middle;
   cursor: default;
@@ -106,7 +119,7 @@ html, body {
   /*outline: 1px solid #808080;*/
 }
 
-.button_down{
+.button_down {
   text-align: center;
   vertical-align: middle;
   cursor: default;
@@ -124,7 +137,7 @@ html, body {
   /*outline: 1px solid #808080;*/
 }
 
-.img_button_up{
+.img_button_up {
   text-align: center;
   vertical-align: middle;
   cursor: default;
@@ -139,7 +152,7 @@ html, body {
   /*outline: 1px solid #808080;*/
 }
 
-.img_button_down{
+.img_button_down {
   text-align: center;
   vertical-align: middle;
   cursor: default;
@@ -154,27 +167,29 @@ html, body {
   /*outline: 1px solid #808080;*/
 }
 
-.container_border{
+.container_border {
   padding: 0px;
   margin: 0px;
   border: 1px solid #808080;
 }
 
+
 /*Main table which content the bar and the MainFrame*/
-.main_table{
+
+.main_table {
   padding: 0px;
   margin: 0px;
   border-collapse: collapse;
 }
 
-.main_table td{
+.main_table td {
   margin: 0px;
   padding: 0px;
   font-weight: bold;
   border: 6px solid #c0c0c0;
 }
 
-.panle_down_table{
+.panle_down_table {
   margin: 0px;
   padding: 3px;
   background: #c0c0c0;
@@ -184,14 +199,16 @@ html, body {
   border-right: 2px solid white;
 }
 
-.function_bar_table{
+.function_bar_table {
   margin: 0px;
   padding: 0px;
   border-collapse: collapse;
 }
 
+
 /*div edition of main frame*/
-.main_container{
+
+.main_container {
   margin-right: auto;
   margin-left: auto;
   margin-top: 0px;
@@ -203,22 +220,22 @@ html, body {
   border-bottom: 6px solid #c0c0c0;
 }
 
-.function_bar_div{
+.function_bar_div {
   margin: 0px;
   padding: 0px;
   border-top: 0px;
-  border-left:0px;
-  border-right:0px;
+  border-left: 0px;
+  border-right: 0px;
   border-bottom: 6px solid #c0c0c0;
 }
 
-.main_frame_div{
+.main_frame_div {
   margin: 0px;
   padding: 0px;
   border: 0px;
 }
 
-.panle_down_div{
+.panle_down_div {
   text-align: center;
   margin: 0px;
   padding: 6px;
@@ -229,7 +246,7 @@ html, body {
   border-right: 2px solid white;
 }
 
-.function_left_div{
+.function_left_div {
   text-align: center;
   width: 45px;
   margin: 0px;
@@ -246,7 +263,7 @@ html, body {
   font-family: 'haettenschweiler';
 }
 
-.function_right_div{
+.function_right_div {
   text-align: center;
   width: 45px;
   margin: 0px;
@@ -263,24 +280,24 @@ html, body {
   font-family: 'haettenschweiler';
 }
 
-.function_mid_div{
+.function_mid_div {
   width: 32px;
   margin: auto;
   padding: 0px;
 }
 
-.mine_area_table{
+.mine_area_table {
   margin: 0px;
   padding: 0px;
   border-collapse: collapse;
 }
 
-.mine_area_table tr td{
+.mine_area_table tr td {
   margin: 0px;
   padding: 0px;
 }
 
-.panle_down_nopadding_div{
+.panle_down_nopadding_div {
   text-align: left;
   margin: 0px;
   padding: 0px;
@@ -291,7 +308,7 @@ html, body {
   border-right: 3px solid white;
 }
 
-.mine_up{
+.mine_up {
   text-align: center;
   vertical-align: middle;
   cursor: default;
@@ -308,7 +325,7 @@ html, body {
   /*outline: 1px solid #808080;*/
 }
 
-.mine_down{
+.mine_down {
   text-align: center;
   vertical-align: middle;
   cursor: default;
@@ -323,7 +340,7 @@ html, body {
   font-weight: bold;
 }
 
-.mine_down_1{
+.mine_down_1 {
   text-align: center;
   vertical-align: middle;
   cursor: default;
@@ -339,7 +356,7 @@ html, body {
   font-weight: bold;
 }
 
-.mine_down_2{
+.mine_down_2 {
   text-align: center;
   vertical-align: middle;
   cursor: default;
@@ -355,7 +372,7 @@ html, body {
   font-weight: bold;
 }
 
-.mine_down_3{
+.mine_down_3 {
   text-align: center;
   vertical-align: middle;
   cursor: default;
@@ -371,7 +388,7 @@ html, body {
   font-weight: bold;
 }
 
-.mine_down_4{
+.mine_down_4 {
   text-align: center;
   vertical-align: middle;
   cursor: default;
@@ -387,7 +404,7 @@ html, body {
   font-weight: bold;
 }
 
-.mine_down_5{
+.mine_down_5 {
   text-align: center;
   vertical-align: middle;
   cursor: default;
@@ -403,7 +420,7 @@ html, body {
   font-weight: bold;
 }
 
-.mine_down_6{
+.mine_down_6 {
   text-align: center;
   vertical-align: middle;
   cursor: default;
@@ -419,7 +436,7 @@ html, body {
   font-weight: bold;
 }
 
-.mine_down_7{
+.mine_down_7 {
   text-align: center;
   vertical-align: middle;
   cursor: default;
@@ -435,7 +452,7 @@ html, body {
   font-weight: bold;
 }
 
-.mine_down_8{
+.mine_down_8 {
   text-align: center;
   vertical-align: middle;
   cursor: default;
@@ -451,7 +468,7 @@ html, body {
   font-weight: bold;
 }
 
-.mine_down_bomb_blast{
+.mine_down_bomb_blast {
   text-align: center;
   vertical-align: middle;
   cursor: default;
@@ -467,7 +484,7 @@ html, body {
   font-weight: bold;
 }
 
-.mine_down_bomb{
+.mine_down_bomb {
   text-align: center;
   vertical-align: middle;
   cursor: default;
@@ -482,64 +499,176 @@ html, body {
   font-size: 1px;
   font-weight: bold;
 }
+
 tr {
   color: white;
 }
-td{
+
+td {
   color: white;
 }
+
 p {
   color: white;
-}  
-canvas {
-    border: 1px solid white;
-  }
-  .night {
-    background-image: url(background2.jpg);
 }
-   .day {
-    background-image: url(background.jpg);
-  }
-#stats        { border: 2px solid black; }
-#controls     { width: 28em; float: left; padding: 1em; font-size: 0.7em; }
-#controls th  { text-align: right; vertical-align: middle; }
-#racer        { position: relative; z-index: 0; width: 640px; height: 480px; margin-left: 20em; border: 2px solid black; }
-#canvas       { position: absolute; z-index: 0; width: 640px; height: 480px; z-index: 0; background-color: #72D7EE; }
-#mute         { background-position:   0px 0px; width: 32px; height: 32px; background: url(images/mute.png); display: inline-block; cursor: pointer; position: absolute; margin-left: 20em; }
-#mute.on      { background-position: -32px 0px; }
+
+canvas {
+  border: 1px solid white;
+}
+
+.night {
+  background-image: url(background2.jpg);
+}
+
+.day {
+  background-image: url(background.jpg);
+}
+
+#stats {
+  border: 2px solid black;
+}
+
+#controls {
+  width: 28em;
+  float: left;
+  padding: 1em;
+  font-size: 0.7em;
+}
+
+#controls th {
+  text-align: right;
+  vertical-align: middle;
+}
+
+#racer {
+  position: relative;
+  z-index: 0;
+  width: 640px;
+  height: 480px;
+  margin-left: 20em;
+  border: 2px solid black;
+}
+
+#canvas {
+  position: absolute;
+  z-index: 0;
+  width: 640px;
+  height: 480px;
+  z-index: 0;
+  background-color: #72D7EE;
+}
+
+#mute {
+  background-position: 0px 0px;
+  width: 32px;
+  height: 32px;
+  background: url(images/mute.png);
+  display: inline-block;
+  cursor: pointer;
+  position: absolute;
+  margin-left: 20em;
+}
+
+#mute.on {
+  background-position: -32px 0px;
+}
+
 
 /**************************************************/
+
+
 /* rudimentary heads up display (only used in v4) */
+
+
 /**************************************************/
 
-#hud                   { position: absolute; z-index: 1; width: 640px; padding: 5px 0; font-family: Verdana, Geneva, sans-serif; font-size: 0.8em; background-color: rgba(255,0,0,0.4); color: black; border-bottom: 2px solid black; box-sizing: border-box; -moz-box-sizing: border-box; -webkit-box-sizing: border-box; }
-#hud .hud              { background-color: rgba(255,255,255,0.6); padding: 5px; border: 1px solid black; margin: 0 5px; transition-property: background-color; transition-duration: 2s; -webkit-transition-property: background-color; -webkit-transition-duration: 2s; }
-#hud #speed            { float: right; }
-#hud #current_lap_time { float: left;  }
-#hud #last_lap_time    { float: left; display: none;  }
-#hud #fast_lap_time    { display: block; width: 12em;  margin: 0 auto; text-align: center; transition-property: background-color; transition-duration: 2s; -webkit-transition-property: background-color; -webkit-transition-duration: 2s; }
-#hud .value            { color: black; font-weight: bold; }
-#hud .fastest          { background-color: rgba(255,215,0,0.5); }
-div { background: -webkit-linear-gradient(#4d4dff, #f9c6d7);
+#hud {
+  position: absolute;
+  z-index: 1;
+  width: 640px;
+  padding: 5px 0;
+  font-family: Verdana, Geneva, sans-serif;
+  font-size: 0.8em;
+  background-color: rgba(255, 0, 0, 0.4);
+  color: black;
+  border-bottom: 2px solid black;
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+}
+
+#hud .hud {
+  background-color: rgba(255, 255, 255, 0.6);
+  padding: 5px;
+  border: 1px solid black;
+  margin: 0 5px;
+  transition-property: background-color;
+  transition-duration: 2s;
+  -webkit-transition-property: background-color;
+  -webkit-transition-duration: 2s;
+}
+
+#hud #speed {
+  float: right;
+}
+
+#hud #current_lap_time {
+  float: left;
+}
+
+#hud #last_lap_time {
+  float: left;
+  display: none;
+}
+
+#hud #fast_lap_time {
+  display: block;
+  width: 12em;
+  margin: 0 auto;
+  text-align: center;
+  transition-property: background-color;
+  transition-duration: 2s;
+  -webkit-transition-property: background-color;
+  -webkit-transition-duration: 2s;
+}
+
+#hud .value {
+  color: black;
+  font-weight: bold;
+}
+
+#hud .fastest {
+  background-color: rgba(255, 215, 0, 0.5);
+}
+
+div {
+  background: -webkit-linear-gradient(#4d4dff, #f9c6d7);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  font-weight: bold;}
-th { background: -webkit-linear-gradient(#4d4dff, #f9c6d7);
+  font-weight: bold;
+}
+
+th {
+  background: -webkit-linear-gradient(#4d4dff, #f9c6d7);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  font-weight: bold;}
-span { background: -webkit-linear-gradient(#4d4dff, #f9c6d7);
+  font-weight: bold;
+}
+
+span {
+  background: -webkit-linear-gradient(#4d4dff, #f9c6d7);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  font-weight: bold;}
- #disclaimer
-{
-    margin-bottom: 1px;
-    margin-left : 1px;
-    width: 200px;
-    height: 200px;
-    position: fixed;
-    bottom: 0;
-    font-size:15px;
-    color:white;
+  font-weight: bold;
+}
+
+#disclaimer {
+  margin-bottom: 1px;
+  margin-left: 1px;
+  width: 200px;
+  height: 200px;
+  position: fixed;
+  bottom: 0;
+  font-size: 15px;
+  color: white;
 }
