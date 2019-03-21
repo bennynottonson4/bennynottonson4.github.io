@@ -3955,7 +3955,9 @@
             "use strict";
             var d = a("../core/core"),
                 e = a("../core/constants");
-            d.prototype.clear = function() {
+            a("./p5.Color"), d.prototype.background = function() {
+                return arguments[0] instanceof d.Image ? this.image(arguments[0], 0, 0, this.width, this.height) : this._renderer.background.apply(this._renderer, arguments), this
+            }, d.prototype.clear = function() {
                 return this._renderer.clear(), this
             }, d.prototype.colorMode = function() {
                 if (arguments[0] === e.RGB || arguments[0] === e.HSB || arguments[0] === e.HSL) {
@@ -5925,7 +5927,7 @@
                         f = ",", g = !0
                     } else if ("tsv" === arguments[k]) {
                     if (g) throw new Error("Cannot set multiple separator types.");
-                    f = "	", g = !0
+                    f = "   ", g = !0
                 }
                 var l = new h.Table;
                 return i({
@@ -6090,7 +6092,7 @@
                 var d = this.createWriter(b, c),
                     f = a.columns,
                     g = ",";
-                if ("tsv" === c && (g = "	"), "html" !== c) {
+                if ("tsv" === c && (g = "   "), "html" !== c) {
                     if ("0" !== f[0])
                         for (var h = 0; h < f.length; h++) h < f.length - 1 ? d.print(f[h] + g) : d.print(f[h]);
                     for (var i = 0; i < a.rows.length; i++) {
