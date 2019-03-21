@@ -990,7 +990,15 @@ ul#horizontal-list {
   display: block;
   margin-left: auto;
   margin-right: auto;
+  margin-top: auto;
   width: 30%;
+}
+.center2 {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 10px;
+  width: 20%;
 }
 
 .night {
