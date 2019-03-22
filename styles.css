@@ -722,9 +722,9 @@ canvas {
 			* {margin: 0; padding: 0;}
 
 
-			html, body { text-align: center; overflow: hidden;}
-			canvas {display: block; background: #000; overflow: hidden;}
-			#game {overflow: hidden; position: relative;}	
+			html, body {width: 100%; height: 100%; text-align: center; overflow: hidden;}
+			canvas {width: 100%; height: 100%; display: block; background: #000; overflow: hidden;}
+			#game {width: 100%; height: 100%; overflow: hidden; position: relative;}	
 
 
 			ol li {list-style-position: inside; line-height: 1.5em;}					
