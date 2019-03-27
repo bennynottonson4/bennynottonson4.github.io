@@ -37,7 +37,6 @@ a {
   background: -webkit-linear-gradient(#4d4dff, #f9c6d7);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  font-weight: 2000;
 }
 
 .heading:after {
@@ -983,42 +982,6 @@ hr {
   .game-message .lower {
     margin-top: 30px !important;
   }
-}
-
-ul {
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
-  overflow: hidden;
-  color: #f9c6d7;
-}
-
-li a {
-  display: block;
-  color: white;
-  text-align: center;
-  text-decoration: none;
-  float: left;
-  font-size: 20px;
-  background: -webkit-linear-gradient(#4d4dff, #f9c6d7);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  font-weight: bold;
-}
-
-#menu-outer {
-  height: 84px;
-}
-
-.table {
-  display: table;
-  margin: 0 auto;
-}
-
-ul#horizontal-list {
-  min-width: 696px;
-  list-style: none;
-  padding-top: 20px;
 }
 
 .center {
