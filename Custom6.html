@@ -54,12 +54,13 @@ $(document).keydown(function(e) {
       </ul>
     </div>
   </div>
-
-            <script src='js/tetris.js'></script>
-      <script src='js/controller.js'></script>
-      <script src='js/render.js'></script>
-      <button id="playbutton" onclick="playButtonClicked();">Play</button>
-            <canvas width='300' height='600'></canvas>
+                                                          <button type="button" onclick="night()" class="btn">Day</button>
+  <button type="button" onclick="day()" class="btn">Night</button>
+        <canvas width='300' height='600'></canvas>
+        <button id="playbutton" onclick="playButtonClicked();">Play</button>
+        <script src='js/tetris.js'></script>
+        <script src='js/controller.js'></script>
+        <script src='js/render.js'></script>
         <button type="button" onclick="night()" class="btn">Day</button>
   <button type="button" onclick="day()" class="btn">Night</button>
    </body>
