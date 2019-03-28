@@ -5,6 +5,40 @@ body {
       max-width: 100%;
     overflow-x: hidden;
 }
+#menu-outer {
+  height: 84px;
+}
+
+.table {
+  display: table;
+  margin: 0 auto;
+}
+
+ul#horizontal-list {
+  min-width: 696px;
+  list-style: none;
+  padding-top: 20px;
+}
+
+li a {
+  display: block;
+  color: white;
+  text-align: center;
+  text-decoration: none;
+  float: left;
+  font-size: 20px;
+  background: -webkit-linear-gradient(#4d4dff, #f9c6d7);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-weight: bold;
+}
+
+a {
+  background: -webkit-linear-gradient(#4d4dff, #f9c6d7);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
 .heading:after {
   content: "";
   display: block;
