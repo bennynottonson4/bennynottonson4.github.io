@@ -33,21 +33,8 @@ var arrow_keys_handler = function(e) {
 window.addEventListener("keydown", arrow_keys_handler, false);
 </script>
 <style>
-body, html{
-  background-color: #222;
-  width: 100%;
-  height: 100%;
-  overflow: hidden;
-}
 
 canvas {
-  display: block;
-  margin: auto;
-  position :absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
   
   image-rendering: optimizeSpeed;
   image-rendering: -moz-crisp-edges;
@@ -839,7 +826,7 @@ window.onload = function() {
     </div>
   </div>
 <link href='https://fonts.googleapis.com/css?family=Play:400,700' rel='stylesheet' type='text/css'>
-<canvas id="game-canvas" width="640" height="640"></canvas>
+<canvas id="game-canvas" width="640" height="640" class="center2"></canvas>
  <button type="button" onclick="night()" class="btn">Day</button>
   <button type="button" onclick="day()" class="btn">Night</button>
 </body>
