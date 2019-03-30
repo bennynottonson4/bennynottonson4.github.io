@@ -23,19 +23,15 @@
     });
   </script>
                                                  <script>
-                                                 var ar=new Array(33,34,35,36,37,38,39,40);
-
-$(document).keydown(function(e) {
-     var key = e.which;
-      //console.log(key);
-      //if(key==35 || key == 36 || key == 37 || key == 39)
-      if($.inArray(key,ar) > -1) {
-          e.preventDefault();
-          return false;
-      }
-      return true;
-});
-                                                 </script>
+                                                 var arrow_keys_handler = function(e) {
+    switch(e.keyCode){
+        case 37: case 39: case 38:  case 40: // Arrow keys
+        case 32: e.preventDefault(); break; // Space
+        default: break; // do not block other keys
+    }
+};
+window.addEventListener("keydown", arrow_keys_handler, false);
+                                 </script>
    </head> 
    <body id="body">
   <div id="menu-outer">
@@ -49,18 +45,16 @@ $(document).keydown(function(e) {
         <li><a href="Custom4.html" class="center2">2048</a></li>
         <li><a href="Custom5.html" class="center2">Racer</a></li>
         <li><a href="Custom6.html" class="center2">Tetris</a></li>
-        <li><a href="Custom7.html" class="center2">Wallpapers</a></li>
+        <li><a href="Custom7.html" class="center2">Space Invaders</a></li>
         <li><a href="Custom8.html" class="center2">Coming Soon</a></li>
       </ul>
     </div>
   </div>
-
-            <script src='js/tetris.js'></script>
-      <script src='js/controller.js'></script>
-      <script src='js/render.js'></script>
-      <button id="playbutton" onclick="playButtonClicked();">Play</button>
-            <canvas width='300' height='600'></canvas>
-        <button type="button" onclick="night()" class="btn">Day</button>
-  <button type="button" onclick="day()" class="btn">Night</button>
+        <audio id="clearsound" src="sound/pop.ogg" preload="auto"></audio>                                          
+        <canvas width='300' height='600'></canvas>
+        <button id="playbutton" onclick="playButtonClicked();">Play</button>
+        <script src='js/tetris.js'></script>
+        <script src='js/controller.js'></script>
+        <script src='js/render.js'></script>
    </body>
 </html>

@@ -1,3 +1,4 @@
+
 document.body.onkeydown = function( e ) {
     var keys = {
         37: 'left',
