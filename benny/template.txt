@@ -24,9 +24,6 @@ body, a, a:link{cursor:url(images/cursor/cursor.cur), default;} a:hover {cursor:
 <style>
 @import url(https://fonts.googleapis.com/css?family=Open+Sans:800);
 
-span {
-    color:white;
-}
 #bgvid{
         position: fixed;
         top:50%;
@@ -57,7 +54,7 @@ background-size: cover;
     animation-delay: -1.2s;
 }
 .text:nth-child(5n + 2) {
-    stroke:  #000000;
+    stroke:  #C423FE;
     -webkit-animation-delay: -2.4s;
     animation-delay: -2.4s;
 }
@@ -97,7 +94,7 @@ html, body {
 }
 
 body {
-    background:  #00FFF3;
+    background:  #000;
     background-size: .2em 100%;
     font: 11.5em/1 Open Sans, Impact;
     text-transform: uppercase;
