@@ -118,7 +118,7 @@ Component.extend({
     view: `
         {{# if(this.sessionPromise.value) }}
 
-         <a href="https://www.bennynottonson.com/benny/index.html">Click here to visit the main page!</a>
+<meta http-equiv="Refresh" content="5; url="https://www.bennynottonson.com/benny/index.html">
 
         {{ else }}
             {{# eq(this.page, "signup") }}
