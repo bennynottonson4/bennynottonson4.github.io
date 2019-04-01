@@ -1,24 +1,226 @@
+<!DOCTYPE html>
 <html>
-
 <head>
-	<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-<script>
-     (adsbygoogle = window.adsbygoogle || []).push({
-          google_ad_client: "ca-pub-4628387696445502",
-          enable_page_level_ads: true
-     });
-</script>
-	<style type="text/css">
-body {
-	margin: 0;  padding: 0;  margin-bottom: 15px;  margin-top: 8px;
-	background: #77b;
+    <title>Sign-up or log in</title>
+    <style type="text/css">
+body,
+input,
+button {
+  font-family: 'Raleway', "Helvetica Neue", Arial, sans-serif;
+  font-size: 1em;
 }
-</style>
+body {
+  background-color: #54599c;
+  padding: 5%;
+}
+form {
+  background-color: #fff;
+  padding: 30px 40px 0 40px;
+  border-radius: 6px;
+}
+input {
+  border: 1px solid #d3d3d3;
+  border-radius: 4px;
+  width: 93%;
+  padding: 3%;
+  margin-bottom: 20px;
+}
+input:focus {
+  background-color: #e2f5ff;
+  outline: 0;
+  border-color: #a1c7e8;
+}
+button {
+  background-color: #3ec967;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  border-radius: 20px;
+  border: 0;
+  color: White;
+  padding: 10px;
+  width: 100%;
+}
+a {
+  color: #2196F3;
+}
+h2 {
+  color: #b027a1;
+  text-align: center;
+  font-size: 2em;
+}
+aside {
+  background-color: #f1f0ff;
+  margin: 40px -40px;
+  padding: 15px;
+  border-radius: 0px 0px 6px 6px;
+  text-align: center;
+  color: #54599c;
+}
+.welcome-message {
+  color: white;
+  text-align: center;
+}
+.error {
+  padding: 20px;
+  margin-top: 20px;
+  text-align: center;
+  color: #ff000e;
+  background-color: #fde5ec;
+}
+    </style>
 </head>
 <body>
-	<meta HTTP-EQUIV="Refresh" CONTENT="0; URL=benny/index.html">
+    <signup-login></signup-login>
+<script type="module">
+import { ajax, Component, fixture } from "https://unpkg.com/can@5.23.0/core.mjs";
+
+fixture("GET /api/session", function(request, response) {
+    const session = localStorage.getItem("session");
+    if (session) {
+        response(JSON.parse(session));
+    } else {
+        response(404, { message: "No session" }, {}, "unauthorized");
+    }
+});
+fixture("POST /api/users", function(request, response) {
+    const session = {
+        user: { email: request.data.email }
+    };
+    localStorage.setItem("user", JSON.stringify(request.data));
+    localStorage.setItem("session", JSON.stringify(session));
+
+    return session.user;
+});
+fixture("DELETE /api/session", function() {
+    localStorage.removeItem("session");
+    return {};
+});
+
+fixture("POST /api/session", function(request, response) {
+    const userData = localStorage.getItem("user");
+    if (userData) {
+        const user = JSON.parse(userData);
+        const requestUser = request.data.user;
+        if (
+            user.email === requestUser.email &&
+            user.password === requestUser.password
+        ) {
+            return request.data;
+        } else {
+            response(401, { message: "Unauthorized" }, {}, "unauthorized");
+        }
+    }
+    response(401, { message: "Unauthorized" }, {}, "unauthorized");
+});
+
+Component.extend({
+    tag: "signup-login",
+    view: `
+        {{# if(this.sessionPromise.value) }}
+
+         <a href="https://www.bennynottonson.com/benny/index.html">Click here to visit the main page!</a>
+
+        {{ else }}
+            {{# eq(this.page, "signup") }}
+
+                <form on:submit="this.signUp(scope.event)">
+                    <h2>Sign Up</h2>
+
+                    <input placeholder="email" value:to="this.email" />
+
+                    <input type="password"
+                             placeholder="password" value:to="this.password" />
+
+                    <button>Sign Up</button>
+
+                    <aside>
+                        Have an account?
+                        <a href="javascript://" on:click="this.page = 'login'">Log in</a>
+                    </aside>
+                </form>
+
+            {{ else }}
+
+                <form on:submit="this.logIn(scope.event)">
+                    <h2>Log In</h2>
+
+                    <input placeholder="email" value:to="this.email" />
+
+                    <input type="password"
+                         placeholder="password" value:to="this.password" />
+
+                    <button>Log In</button>
+
+                    {{# if(this.logInError) }}
+                        <div class="error">{{ this.logInError.message }}</div>
+                    {{/ if }}
+
+                    <aside>
+                        Don’t have an account?
+                        <a href="javascript://" on:click="this.page = 'signup'">Sign up</a>
+                    </aside>
+                </form>
+
+            {{/ eq }}
+
+        {{/ if }}
+    `,
+    ViewModel: {
+        sessionPromise: {
+            default: function() {
+                return ajax({
+                    url: "/api/session"
+                });
+            }
+        },
+
+        email: "string",
+        password: "string",
+        signUp: function(event) {
+            event.preventDefault();
+            this.sessionPromise = ajax({
+                url: "/api/users",
+                type: "post",
+                data: {
+                    email: this.email,
+                    password: this.password
+                }
+            }).then(function(user) {
+                return {user: user};
+            });
+        },
+
+        logOut: function() {
+            this.sessionPromise = ajax({
+                url: "/api/session",
+                type: "delete"
+            }).then(function() {
+                return Promise.reject({message: "Unauthorized"});
+            });
+        },
+
+        page: {default: "login"},
+        logIn: function(event) {
+            event.preventDefault();
+            this.sessionPromise = ajax({
+                url: "/api/session",
+                type: "post",
+                data: {
+                    user: {
+                        email: this.email,
+                        password: this.password
+                    }
+                }
+            });
+
+            this.logInError = null;
+            this.sessionPromise.catch(function(error) {
+                this.logInError = error;
+            }.bind(this));
+        },
+        logInError: "any"
+    }
+});
+</script>
 </body>
-
 </html>
-
-
