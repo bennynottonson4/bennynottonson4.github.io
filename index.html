@@ -1,225 +1,171 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Sign-up or log in</title>
-    <style type="text/css">
-body,
-input,
-button {
-  font-family: 'Raleway', "Helvetica Neue", Arial, sans-serif;
-  font-size: 1em;
-}
-body {
-  background-color: #54599c;
-  padding: 5%;
-}
-form {
-  background-color: #fff;
-  padding: 30px 40px 0 40px;
-  border-radius: 6px;
-}
-input {
-  border: 1px solid #d3d3d3;
-  border-radius: 4px;
-  width: 93%;
-  padding: 3%;
-  margin-bottom: 20px;
-}
-input:focus {
-  background-color: #e2f5ff;
-  outline: 0;
-  border-color: #a1c7e8;
-}
-button {
-  background-color: #3ec967;
-  text-transform: uppercase;
-  letter-spacing: 2px;
-  border-radius: 20px;
-  border: 0;
-  color: White;
-  padding: 10px;
-  width: 100%;
-}
-a {
-  color: #2196F3;
-}
-h2 {
-  color: #b027a1;
-  text-align: center;
-  font-size: 2em;
-}
-aside {
-  background-color: #f1f0ff;
-  margin: 40px -40px;
-  padding: 15px;
-  border-radius: 0px 0px 6px 6px;
-  text-align: center;
-  color: #54599c;
-}
-.welcome-message {
-  color: white;
-  text-align: center;
-}
-.error {
-  padding: 20px;
-  margin-top: 20px;
-  text-align: center;
-  color: #ff000e;
-  background-color: #fde5ec;
-}
-    </style>
-</head>
-<body>
-    <signup-login></signup-login>
-<script type="module">
-import { ajax, Component, fixture } from "https://unpkg.com/can@5.23.0/core.mjs";
-
-fixture("GET /api/session", function(request, response) {
-    const session = localStorage.getItem("session");
-    if (session) {
-        response(JSON.parse(session));
-    } else {
-        response(404, { message: "No session" }, {}, "unauthorized");
-    }
-});
-fixture("POST /api/users", function(request, response) {
-    const session = {
-        user: { email: request.data.email }
-    };
-    localStorage.setItem("user", JSON.stringify(request.data));
-    localStorage.setItem("session", JSON.stringify(session));
-
-    return session.user;
-});
-fixture("DELETE /api/session", function() {
-    localStorage.removeItem("session");
-    return {};
-});
-
-fixture("POST /api/session", function(request, response) {
-    const userData = localStorage.getItem("user");
-    if (userData) {
-        const user = JSON.parse(userData);
-        const requestUser = request.data.user;
-        if (
-            user.email === requestUser.email &&
-            user.password === requestUser.password
-        ) {
-            return request.data;
-        } else {
-            response(401, { message: "Unauthorized" }, {}, "unauthorized");
-        }
-    }
-    response(401, { message: "Unauthorized" }, {}, "unauthorized");
-});
-
-Component.extend({
-    tag: "signup-login",
-    view: `
-        {{# if(this.sessionPromise.value) }}
-
-<a href="benny/index.html"><button>Go to main page</button></a>
-        {{ else }}
-            {{# eq(this.page, "signup") }}
-
-                <form on:submit="this.signUp(scope.event)">
-                    <h2>Sign Up</h2>
-
-                    <input placeholder="email" value:to="this.email" />
-
-                    <input type="password"
-                             placeholder="password" value:to="this.password" />
-
-                    <button>Sign Up</button>
-
-                    <aside>
-                        Have an account?
-                        <a href="javascript://" on:click="this.page = 'login'">Log in</a>
-                    </aside>
-                </form>
-
-            {{ else }}
-
-                <form on:submit="this.logIn(scope.event)">
-                    <h2>Log In</h2>
-
-                    <input placeholder="email" value:to="this.email" />
-
-                    <input type="password"
-                         placeholder="password" value:to="this.password" />
-
-                    <button>Log In</button>
-
-                    {{# if(this.logInError) }}
-                        <div class="error">{{ this.logInError.message }}</div>
-                    {{/ if }}
-
-                    <aside>
-                        Don’t have an account?
-                        <a href="javascript://" on:click="this.page = 'signup'">Sign up</a>
-                    </aside>
-                </form>
-
-            {{/ eq }}
-
-        {{/ if }}
-    `,
-    ViewModel: {
-        sessionPromise: {
-            default: function() {
-                return ajax({
-                    url: "/api/session"
-                });
-            }
-        },
-
-        email: "string",
-        password: "string",
-        signUp: function(event) {
-            event.preventDefault();
-            this.sessionPromise = ajax({
-                url: "/api/users",
-                type: "post",
-                data: {
-                    email: this.email,
-                    password: this.password
-                }
-            }).then(function(user) {
-                return {user: user};
-            });
-        },
-
-        logOut: function() {
-            this.sessionPromise = ajax({
-                url: "/api/session",
-                type: "delete"
-            }).then(function() {
-                return Promise.reject({message: "Unauthorized"});
-            });
-        },
-
-        page: {default: "login"},
-        logIn: function(event) {
-            event.preventDefault();
-            this.sessionPromise = ajax({
-                url: "/api/session",
-                type: "post",
-                data: {
-                    user: {
-                        email: this.email,
-                        password: this.password
-                    }
-                }
-            });
-
-            this.logInError = null;
-            this.sessionPromise.catch(function(error) {
-                this.logInError = error;
-            }.bind(this));
-        },
-        logInError: "any"
-    }
-});
+   <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({
+          google_ad_client: "ca-pub-4628387696445502",
+          enable_page_level_ads: true
+     });
 </script>
+<title>Login or Signup</title>
+<style>
+
+#bgvid{
+        position: fixed;
+        top:50%;
+        left:50%;
+        min-width:100%;
+        min-height:100%;
+        width:auto;
+        height:auto;
+        z-index: -100;
+        -webkit-transform: translateX(-50%) translateY(-50%);
+transform: translateX(-50%) translateY(-50%);
+background-size: cover;
+}
+
+.text {
+    fill: none;
+    stroke-width: 6;
+    stroke-linejoin: round;
+    stroke-dasharray: 70 330;
+    stroke-dashoffset: 0;
+    -webkit-animation: stroke 6s infinite linear;
+    animation: stroke 6s infinite linear;
+}
+
+.text:nth-child(5n + 1) {
+    stroke:  #C313EE;
+    -webkit-animation-delay: -1.2s;
+    animation-delay: -1.2s;
+}
+.text:nth-child(5n + 2) {
+    stroke:  #00FFF3;
+    -webkit-animation-delay: -2.4s;
+    animation-delay: -2.4s;
+}
+
+.text:nth-child(5n + 3) {
+    stroke:  #C423FE;
+    -webkit-animation-delay: -3.6s;
+    animation-delay: -3.6s;
+}
+
+.text:nth-child(5n + 4) {
+    stroke: #FFFFFF;
+    -webkit-animation-delay: -4.8s;
+    animation-delay: -4.8s;
+}
+
+.text:nth-child(5n + 5) {
+    stroke:  #00FFF3;
+    -webkit-animation-delay: -6s;
+    animation-delay: -6s;
+}
+
+@-webkit-keyframes stroke {
+    100% {
+    stroke-dashoffset: -400;
+    }
+}
+
+@keyframes stroke {
+    100% {
+    stroke-dashoffset: -400;
+    }
+}
+
+svg {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+
+</style>
+<form id="login-form" action="submit">
+<style>
+body, a, a:link{cursor:url(benny/images/cursor/cursor.cur), default;} a:hover {cursor:url(benny/images/cursor/cursor2.cur),pointer;} td, th, tr, option, select, label, input, button:hover {cursor:url(benny/images/cursor/cursor2.cur),pointer;}
+</style>
+
+<script>
+window.addEventListener("DOMContentLoaded", setupForm);
+
+function setupForm(){
+	const form = document.getElementById("login-form");
+	form.addEventListener("submit", handleSubmit);
+}//setupForm
+
+function handleSubmit(event){
+	event.preventDefault();
+
+	const {
+		username,
+		password,
+		login_type,
+		result
+	} = event.target;
+
+	const processUser = login_type.value == "register" ? registerUser : loginUser;
+	const response    = processUser(username.value, password.value);
+	result.innerHTML  = response;
+}//handleSubmit
+
+function registerUser(username, password){
+	window.localStorage.setItem("exampleLogin__username", username);
+	window.localStorage.setItem("exampleLogin__password", password);
+
+	return `New user ${username} now registered!`;
+}//registerUser
+
+function loginUser(username, password){
+	const registeredUser     = window.localStorage.getItem("exampleLogin__username");
+	const registeredPassword = window.localStorage.getItem("exampleLogin__password");
+
+	const validUser     = username == registeredUser;
+	const validPassword = password == registeredPassword;
+
+	if(validUser && validPassword){
+		window.location.href = "benny/index.html";
+	}
+        else if(!validUser)     return `Username ${username} has not been registered. `;
+	else if(!validPassword) return `Incorrect password for username ${username}`;
+}//loginUser
+</script>
+</head>
+<body oncontextmenu="return false;" onclick="hitmarker();" unselectable="on" onselectstart="return false;">
+    <cavnas>
+	<fieldset>
+		<legend>
+			User Details
+		</legend>
+		<div>
+			<label for="username">Username</label>
+			<input id="username" type="text" name="username" placeholder="Eg. jane_doe" required/>
+		</div>
+		<div>
+			<label for="password">Password</label>
+			<input id="password" type="password" name="password" required />
+		</div>
+	</fieldset>
+	<fieldset>
+		<legend>
+			Login Type
+		</legend>
+		<span>
+			<input id="register" type="radio" name="login_type" value="register" checked="checked">
+			<label for="register">Register</label>
+		</span>
+		<span>
+			<input id="login" type="radio" name="login_type" value="login">
+			<label for="login">Login</label>
+		</span>
+	</fieldset>
+	<input type="submit" value="Submit" />
+
+	<output name="result"></output>
+    <video muted id="bgvid" autoplay="autoplay" loop="loop">
+            <div id="star" class="video mask overlay"><canvas class="cover"></canvas></div>
+</form>
+</canvas>
 </body>
-</html>
