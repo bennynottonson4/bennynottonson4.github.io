@@ -1,171 +1,237 @@
 <!DOCTYPE html>
 <html>
-<head>
-   <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-<script>
-     (adsbygoogle = window.adsbygoogle || []).push({
-          google_ad_client: "ca-pub-4628387696445502",
-          enable_page_level_ads: true
-     });
-</script>
-<title>Login or Signup</title>
-<style>
+  <head>
+  <meta charset=utf-8 />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Email/Password Authentication Example</title>
 
-#bgvid{
-        position: fixed;
-        top:50%;
-        left:50%;
-        min-width:100%;
-        min-height:100%;
-        width:auto;
-        height:auto;
-        z-index: -100;
-        -webkit-transform: translateX(-50%) translateY(-50%);
-transform: translateX(-50%) translateY(-50%);
-background-size: cover;
-}
+  <!-- Material Design Theming -->
+  <link rel="stylesheet" href="https://code.getmdl.io/1.1.3/material.orange-indigo.min.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+  <script defer src="https://code.getmdl.io/1.1.3/material.min.js"></script>
 
-.text {
-    fill: none;
-    stroke-width: 6;
-    stroke-linejoin: round;
-    stroke-dasharray: 70 330;
-    stroke-dashoffset: 0;
-    -webkit-animation: stroke 6s infinite linear;
-    animation: stroke 6s infinite linear;
-}
+  <link rel="stylesheet" href="main.css">
 
-.text:nth-child(5n + 1) {
-    stroke:  #C313EE;
-    -webkit-animation-delay: -1.2s;
-    animation-delay: -1.2s;
-}
-.text:nth-child(5n + 2) {
-    stroke:  #00FFF3;
-    -webkit-animation-delay: -2.4s;
-    animation-delay: -2.4s;
-}
+  <!-- Import and configure the Firebase SDK -->
+  <!-- These scripts are made available when the app is served or deployed on Firebase Hosting -->
+  <!-- If you do not serve/host your project using Firebase Hosting see https://firebase.google.com/docs/web/setup -->
+  <script src="/__/firebase/5.9.2/firebase-app.js"></script>
+  <script src="/__/firebase/5.9.2/firebase-auth.js"></script>
+  <script src="/__/firebase/init.js"></script>
 
-.text:nth-child(5n + 3) {
-    stroke:  #C423FE;
-    -webkit-animation-delay: -3.6s;
-    animation-delay: -3.6s;
-}
-
-.text:nth-child(5n + 4) {
-    stroke: #FFFFFF;
-    -webkit-animation-delay: -4.8s;
-    animation-delay: -4.8s;
-}
-
-.text:nth-child(5n + 5) {
-    stroke:  #00FFF3;
-    -webkit-animation-delay: -6s;
-    animation-delay: -6s;
-}
-
-@-webkit-keyframes stroke {
-    100% {
-    stroke-dashoffset: -400;
+  <script type="text/javascript">
+    /**
+     * Handles the sign in button press.
+     */
+    function toggleSignIn() {
+      if (firebase.auth().currentUser) {
+        // [START signout]
+        firebase.auth().signOut();
+        // [END signout]
+      } else {
+        var email = document.getElementById('email').value;
+        var password = document.getElementById('password').value;
+        if (email.length < 4) {
+          alert('Please enter an email address.');
+          return;
+        }
+        if (password.length < 4) {
+          alert('Please enter a password.');
+          return;
+        }
+        // Sign in with email and pass.
+        // [START authwithemail]
+        firebase.auth().signInWithEmailAndPassword(email, password).catch(function(error) {
+          // Handle Errors here.
+          var errorCode = error.code;
+          var errorMessage = error.message;
+          // [START_EXCLUDE]
+          if (errorCode === 'auth/wrong-password') {
+            alert('Wrong password.');
+          } else {
+            alert(errorMessage);
+          }
+          console.log(error);
+          document.getElementById('quickstart-sign-in').disabled = false;
+          // [END_EXCLUDE]
+        });
+        // [END authwithemail]
+      }
+      document.getElementById('quickstart-sign-in').disabled = true;
     }
-}
-
-@keyframes stroke {
-    100% {
-    stroke-dashoffset: -400;
+    /**
+     * Handles the sign up button press.
+     */
+    function handleSignUp() {
+      var email = document.getElementById('email').value;
+      var password = document.getElementById('password').value;
+      if (email.length < 4) {
+        alert('Please enter an email address.');
+        return;
+      }
+      if (password.length < 4) {
+        alert('Please enter a password.');
+        return;
+      }
+      // Sign in with email and pass.
+      // [START createwithemail]
+      firebase.auth().createUserWithEmailAndPassword(email, password).catch(function(error) {
+        // Handle Errors here.
+        var errorCode = error.code;
+        var errorMessage = error.message;
+        // [START_EXCLUDE]
+        if (errorCode == 'auth/weak-password') {
+          alert('The password is too weak.');
+        } else {
+          alert(errorMessage);
+        }
+        console.log(error);
+        // [END_EXCLUDE]
+      });
+      // [END createwithemail]
     }
-}
-
-svg {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-}
-
-</style>
-<form id="login-form" action="submit">
-<style>
-body, a, a:link{cursor:url(benny/images/cursor/cursor.cur), default;} a:hover {cursor:url(benny/images/cursor/cursor2.cur),pointer;} td, th, tr, option, select, label, input, button:hover {cursor:url(benny/images/cursor/cursor2.cur),pointer;}
-</style>
-
-<script>
-window.addEventListener("DOMContentLoaded", setupForm);
-
-function setupForm(){
-	const form = document.getElementById("login-form");
-	form.addEventListener("submit", handleSubmit);
-}//setupForm
-
-function handleSubmit(event){
-	event.preventDefault();
-
-	const {
-		username,
-		password,
-		login_type,
-		result
-	} = event.target;
-
-	const processUser = login_type.value == "register" ? registerUser : loginUser;
-	const response    = processUser(username.value, password.value);
-	result.innerHTML  = response;
-}//handleSubmit
-
-function registerUser(username, password){
-	window.localStorage.setItem("exampleLogin__username", username);
-	window.localStorage.setItem("exampleLogin__password", password);
-
-	return `New user ${username} now registered!`;
-}//registerUser
-
-function loginUser(username, password){
-	const registeredUser     = window.localStorage.getItem("exampleLogin__username");
-	const registeredPassword = window.localStorage.getItem("exampleLogin__password");
-
-	const validUser     = username == registeredUser;
-	const validPassword = password == registeredPassword;
-
-	if(validUser && validPassword){
-		window.location.href = "benny/index.html";
-	}
-        else if(!validUser)     return `Username ${username} has not been registered. `;
-	else if(!validPassword) return `Incorrect password for username ${username}`;
-}//loginUser
-</script>
+    /**
+     * Sends an email verification to the user.
+     */
+    function sendEmailVerification() {
+      // [START sendemailverification]
+      firebase.auth().currentUser.sendEmailVerification().then(function() {
+        // Email Verification sent!
+        // [START_EXCLUDE]
+        alert('Email Verification Sent!');
+        // [END_EXCLUDE]
+      });
+      // [END sendemailverification]
+    }
+    function sendPasswordReset() {
+      var email = document.getElementById('email').value;
+      // [START sendpasswordemail]
+      firebase.auth().sendPasswordResetEmail(email).then(function() {
+        // Password Reset Email Sent!
+        // [START_EXCLUDE]
+        alert('Password Reset Email Sent!');
+        // [END_EXCLUDE]
+      }).catch(function(error) {
+        // Handle Errors here.
+        var errorCode = error.code;
+        var errorMessage = error.message;
+        // [START_EXCLUDE]
+        if (errorCode == 'auth/invalid-email') {
+          alert(errorMessage);
+        } else if (errorCode == 'auth/user-not-found') {
+          alert(errorMessage);
+        }
+        console.log(error);
+        // [END_EXCLUDE]
+      });
+      // [END sendpasswordemail];
+    }
+    /**
+     * initApp handles setting up UI event listeners and registering Firebase auth listeners:
+     *  - firebase.auth().onAuthStateChanged: This listener is called when the user is signed in or
+     *    out, and that is where we update the UI.
+     */
+    function initApp() {
+      // Listening for auth state changes.
+      // [START authstatelistener]
+      firebase.auth().onAuthStateChanged(function(user) {
+        // [START_EXCLUDE silent]
+        document.getElementById('quickstart-verify-email').disabled = true;
+        // [END_EXCLUDE]
+        if (user) {
+          // User is signed in.
+          var displayName = user.displayName;
+          var email = user.email;
+          var emailVerified = user.emailVerified;
+          var photoURL = user.photoURL;
+          var isAnonymous = user.isAnonymous;
+          var uid = user.uid;
+          var providerData = user.providerData;
+          // [START_EXCLUDE]
+          document.getElementById('quickstart-sign-in-status').textContent = 'Signed in';
+          document.getElementById('quickstart-sign-in').textContent = 'Sign out';
+          if (!emailVerified) {
+            document.getElementById('quickstart-verify-email').disabled = false;
+            window.location.href = "http://bennynottonson.com/benny/index";
+          }
+          // [END_EXCLUDE]
+        } else {
+          // User is signed out.
+          // [START_EXCLUDE]
+          document.getElementById('quickstart-sign-in-status').textContent = 'Signed out';
+          document.getElementById('quickstart-sign-in').textContent = 'Sign in';
+          // [END_EXCLUDE]
+        }
+        // [START_EXCLUDE silent]
+        document.getElementById('quickstart-sign-in').disabled = false;
+        // [END_EXCLUDE]
+      });
+      // [END authstatelistener]
+      document.getElementById('quickstart-sign-in').addEventListener('click', toggleSignIn, false);
+      document.getElementById('quickstart-sign-up').addEventListener('click', handleSignUp, false);
+      document.getElementById('quickstart-verify-email').addEventListener('click', sendEmailVerification, false);
+      document.getElementById('quickstart-password-reset').addEventListener('click', sendPasswordReset, false);
+    }
+    window.onload = function() {
+      initApp();
+    };
+  </script>
 </head>
-<body oncontextmenu="return false;" onclick="hitmarker();" unselectable="on" onselectstart="return false;">
-    <cavnas>
-	<fieldset>
-		<legend>
-			User Details
-		</legend>
-		<div>
-			<label for="username">Username</label>
-			<input id="username" type="text" name="username" placeholder="Eg. jane_doe" required/>
-		</div>
-		<div>
-			<label for="password">Password</label>
-			<input id="password" type="password" name="password" required />
-		</div>
-	</fieldset>
-	<fieldset>
-		<legend>
-			Login Type
-		</legend>
-		<span>
-			<input id="register" type="radio" name="login_type" value="register" checked="checked">
-			<label for="register">Register</label>
-		</span>
-		<span>
-			<input id="login" type="radio" name="login_type" value="login">
-			<label for="login">Login</label>
-		</span>
-	</fieldset>
-	<input type="submit" value="Submit" />
+<body>
+<script src="https://www.gstatic.com/firebasejs/5.9.2/firebase.js"></script>
+<script>
+  // Initialize Firebase
+  var config = {
+    apiKey: "AIzaSyBvmO2EcvKJP9N9Z8ql5429cXMMKqWfJ4Y",
+    authDomain: "server-for-github.firebaseapp.com",
+    databaseURL: "https://server-for-github.firebaseio.com",
+    projectId: "server-for-github",
+    storageBucket: "server-for-github.appspot.com",
+    messagingSenderId: "723374187898"
+  };
+  firebase.initializeApp(config);
+</script>
+<div class="demo-layout mdl-layout mdl-js-layout mdl-layout--fixed-header">
 
-	<output name="result"></output>
-    <video muted id="bgvid" autoplay="autoplay" loop="loop">
-            <div id="star" class="video mask overlay"><canvas class="cover"></canvas></div>
-</form>
-</canvas>
+  <!-- Header section containing title -->
+  <header class="mdl-layout__header mdl-color-text--white mdl-color--light-blue-700">
+    <div class="mdl-cell mdl-cell--12-col mdl-cell--12-col-tablet mdl-grid">
+      <div class="mdl-layout__header-row mdl-cell mdl-cell--12-col mdl-cell--12-col-tablet mdl-cell--8-col-desktop">
+        <a href="/"><h3>Firebase Authentication</h3></a>
+      </div>
+    </div>
+  </header>
+
+  <main class="mdl-layout__content mdl-color--grey-100">
+    <div class="mdl-cell mdl-cell--12-col mdl-cell--12-col-tablet mdl-grid">
+
+      <!-- Container for the demo -->
+      <div class="mdl-card mdl-shadow--2dp mdl-cell mdl-cell--12-col mdl-cell--12-col-tablet mdl-cell--12-col-desktop">
+        <div class="mdl-card__title mdl-color--light-blue-600 mdl-color-text--white">
+          <h2 class="mdl-card__title-text">Firebase Email &amp; Password Authentication</h2>
+        </div>
+        <div class="mdl-card__supporting-text mdl-color-text--grey-600">
+          <p>Enter an email and password below and either sign in to an existing account or sign up</p>
+
+          <input class="mdl-textfield__input" style="display:inline;width:auto;" type="text" id="email" name="email" placeholder="Email"/>
+          &nbsp;&nbsp;&nbsp;
+          <input class="mdl-textfield__input" style="display:inline;width:auto;" type="password" id="password" name="password" placeholder="Password"/>
+          <br/><br/>
+          <button disabled class="mdl-button mdl-js-button mdl-button--raised" id="quickstart-sign-in" name="signin">Sign In</button>
+          &nbsp;&nbsp;&nbsp;
+          <button class="mdl-button mdl-js-button mdl-button--raised" id="quickstart-sign-up" name="signup">Sign Up</button>
+          &nbsp;&nbsp;&nbsp;
+          <button class="mdl-button mdl-js-button mdl-button--raised" disabled id="quickstart-verify-email" name="verify-email">Send Email Verification</button>
+          &nbsp;&nbsp;&nbsp;
+          <button class="mdl-button mdl-js-button mdl-button--raised" id="quickstart-password-reset" name="verify-email">Send Password Reset Email</button>
+
+          <!-- Container where we'll display the user details -->
+          <div class="quickstart-user-details-container">
+            Firebase sign-in status: <span id="quickstart-sign-in-status"><a href="benny/index">Unknown</a></span>
+        </div>
+      </div>
+    </div>
+  </main>
+</div>
 </body>
+</html>
