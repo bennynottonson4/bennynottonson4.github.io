@@ -118,9 +118,6 @@ svg {
     justify-content: center;
     overflow-y: hidden;
   }
-.game {
-    border: 1px solid white;
-  }
 
 </style>
 </head>
@@ -150,7 +147,7 @@ svg {
     <script src="filesys/js/plugins.min.js"></script>
     <script src="filesys/js/main.js"></script>
 <footer id="ftr" style="position:fixed; padding-bottom: 0vh; left:0vw; right:0vw; bottom:0vh; background:transparent); text-align:center;"><font face="Courier New" size="4">
-    <canvas width="400" height="400" id="game"></canvas>
+    <canvas width="400" height="400" id="game" style="border:1px solid white;"></canvas>
 <script>
 var canvas = document.getElementById('game');
 var context = canvas.getContext('2d');
@@ -215,11 +212,16 @@ function loop() {
   // draw apple
   context.fillStyle = 'red';
   context.fillRect(apple.x, apple.y, grid-1, grid-1);
+  object.style.zIndex="100";
+  object.style.position = "relative";
 
   // draw snake
   context.fillStyle = 'green';
   snake.cells.forEach(function(cell, index) {
     context.fillRect(cell.x, cell.y, grid-1, grid-1);
+      object.style.zIndex="100";
+  object.style.position = "relative";
+
 
     // snake ate apple
     if (cell.x === apple.x && cell.y === apple.y) {
