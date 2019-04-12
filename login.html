@@ -1,7 +1,7 @@
 <html><head>
     <title>Benny's Page</title>
-      <meta name="viewport" content="width=device-width, initial-scale=1.0">
-</head><body onload="typewriter();"><script src="https://www.gstatic.com/firebasejs/5.9.4/firebase.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://www.gstatic.com/firebasejs/5.9.4/firebase.js"></script>
 <script>
   // Initialize Firebase
   var config = {
@@ -9,267 +9,34 @@
     authDomain: "bennynottonson-5241f.firebaseapp.com",
     databaseURL: "https://bennynottonson-5241f.firebaseio.com",
     projectId: "bennynottonson-5241f",
-    storageBucket: "",
+    storageBucket: "bennynottonson-5241f.appspot.com",
     messagingSenderId: "804448012310"
   };
   firebase.initializeApp(config);
 </script>
-<!-- Firebase App is always required and must be first -->
-<script src="https://www.gstatic.com/firebasejs/5.9.4/firebase-app.js"></script>
-
-<!-- Add additional services that you want to use -->
-<script src="https://www.gstatic.com/firebasejs/5.9.4/firebase-auth.js"></script>
-<script src="https://www.gstatic.com/firebasejs/5.9.4/firebase-database.js"></script>
-
-<script>
-  var config = {
-    // ...
-  };
-  firebase.initializeApp(config);
-</script>
-   <script type="text/javascript">
-    /**
-     * Handles the sign in button press.
-     */
-    function toggleSignIn() {
-      if (firebase.auth().currentUser) {
-        // [START signout]
-        firebase.auth().signOut();
-        // [END signout]
-      } else {
-        var email = document.getElementById('email').value;
-        var password = document.getElementById('password').value;
-        if (email.length < 4) {
-          alert('Please enter an email address.');
-          return;
-        }
-        if (password.length < 4) {
-          alert('Please enter a password.');
-          return;
-        }
-        // Sign in with email and pass.
-        // [START authwithemail]
-        firebase.auth().signInWithEmailAndPassword(email, password).catch(function(error) {
-          // Handle Errors here.
-          var errorCode = error.code;
-          var errorMessage = error.message;
-          // [START_EXCLUDE]
-          if (errorCode === 'auth/wrong-password') {
-            alert('Wrong password.');
-          } else {
-            alert(errorMessage);
-          }
-          console.log(error);
-          document.getElementById('quickstart-sign-in').disabled = false;
-          // [END_EXCLUDE]
-        });
-        // [END authwithemail]
-      }
-      document.getElementById('quickstart-sign-in').disabled = true;
-    }
-    /**
-     * Handles the sign up button press.
-     */
-    function handleSignUp() {
-      var email = document.getElementById('email').value;
-      var password = document.getElementById('password').value;
-      if (email.length < 4) {
-        alert('Please enter an email address.');
-        return;
-      }
-      if (password.length < 4) {
-        alert('Please enter a password.');
-        return;
-      }
-      // Sign in with email and pass.
-      // [START createwithemail]
-      firebase.auth().createUserWithEmailAndPassword(email, password).catch(function(error) {
-        // Handle Errors here.
-        var errorCode = error.code;
-        var errorMessage = error.message;
-        // [START_EXCLUDE]
-        if (errorCode == 'auth/weak-password') {
-          alert('The password is too weak.');
-        } else {
-          alert(errorMessage);
-        }
-        console.log(error);
-        // [END_EXCLUDE]
-      });
-      // [END createwithemail]
-    }
-    /**
-     * Sends an email verification to the user.
-     */
-    function sendEmailVerification() {
-      // [START sendemailverification]
-      firebase.auth().currentUser.sendEmailVerification().then(function() {
-        // Email Verification sent!
-        // [START_EXCLUDE]
-        alert('Email Verification Sent!');
-        // [END_EXCLUDE]
-      });
-      // [END sendemailverification]
-    }
-    function sendPasswordReset() {
-      var email = document.getElementById('email').value;
-      // [START sendpasswordemail]
-      firebase.auth().sendPasswordResetEmail(email).then(function() {
-        // Password Reset Email Sent!
-        // [START_EXCLUDE]
-        alert('Password Reset Email Sent!');
-        // [END_EXCLUDE]
-      }).catch(function(error) {
-        // Handle Errors here.
-        var errorCode = error.code;
-        var errorMessage = error.message;
-        // [START_EXCLUDE]
-        if (errorCode == 'auth/invalid-email') {
-          alert(errorMessage);
-        } else if (errorCode == 'auth/user-not-found') {
-          alert(errorMessage);
-        }
-        console.log(error);
-        // [END_EXCLUDE]
-      });
-      // [END sendpasswordemail];
-    }
-    /**
-     * initApp handles setting up UI event listeners and registering Firebase auth listeners:
-     *  - firebase.auth().onAuthStateChanged: This listener is called when the user is signed in or
-     *    out, and that is where we update the UI.
-     */
-    function initApp() {
-      // Listening for auth state changes.
-      // [START authstatelistener]
-      firebase.auth().onAuthStateChanged(function(user) {
-        // [START_EXCLUDE silent]
-        document.getElementById('quickstart-verify-email').disabled = true;
-        // [END_EXCLUDE]
-        if (user) {
-          // User is signed in.
-          var displayName = user.displayName;
-          var email = user.email;
-          var emailVerified = user.emailVerified;
-          var photoURL = user.photoURL;
-          var isAnonymous = user.isAnonymous;
-          var uid = user.uid;
-          var providerData = user.providerData;
-          // [START_EXCLUDE]
-          window.location.href = "benny/index";
-          document.getElementById('quickstart-sign-in-status').textContent = 'Signed in';
-          document.getElementById('quickstart-sign-in').textContent = 'Sign out';
-          if (!emailVerified) {
-            document.getElementById('quickstart-verify-email').disabled = false;
-          }
-          // [END_EXCLUDE]
-        } else {
-          // User is signed out.
-          // [START_EXCLUDE]
-          document.getElementById('quickstart-sign-in-status').textContent = 'Signed out';
-          document.getElementById('quickstart-sign-in').textContent = 'Sign in';
-          // [END_EXCLUDE]
-        }
-        // [START_EXCLUDE silent]
-        document.getElementById('quickstart-sign-in').disabled = false;
-        // [END_EXCLUDE]
-      });
-      // [END authstatelistener]
-      document.getElementById('quickstart-sign-in').addEventListener('click', toggleSignIn, false);
-      document.getElementById('quickstart-sign-up').addEventListener('click', handleSignUp, false);
-      document.getElementById('quickstart-verify-email').addEventListener('click', sendEmailVerification, false);
-      document.getElementById('quickstart-password-reset').addEventListener('click', sendPasswordReset, false);
-    }
-    window.onload = function() {
-      initApp();
-    };
-  </script>
-        <style>
-    html, body { padding: 0; margin: 0; font-family: 'Montserrat', helvetica, sans-serif; background: #000; color: #fff; font-size: 20pt; line-height: 1.5; padding: 2%;    max-width: 100%;
-    overflow-x: hidden; }
-    h1 { margin: 0; padding: 0; }
-    </style>
-    <script type="text/javascript">
-        var aText = new Array(
-"Enter a valid email and password below to login." // add your text
-);
-var iSpeed = 20; 
-var iIndex = 0; 
-var iArrLength = aText[0].length; 
-var iScrollAt = 10; 
- 
-var iTextPos = 10; 
-var sContents = ''; 
-var iRow; 
- 
-function typewriter()
-{
- sContents =  ' ';
- iRow = Math.max(0, iIndex-iScrollAt);
- var destination = document.getElementById("typedtext");
- 
- while ( iRow < iIndex ) {
-  sContents += aText[iRow++] + '<br />';
- }
- destination.innerHTML = sContents + aText[iIndex].substring(0, iTextPos) + "▋";
- if ( iTextPos++ == iArrLength ) {
-  iTextPos = 0;
-  iIndex++;
-  if ( iIndex != aText.length ) {
-   iArrLength = aText[iIndex].length;
-   setTimeout("typewriter()", 500);
-  }
- } else {
-  setTimeout("typewriter()", iSpeed);
- }
-}
-    </script>
-
-
+    <meta name="google-signin-scope" content="profile email">
+    <meta name="google-signin-client_id" content="YOUR_CLIENT_ID.apps.googleusercontent.com">
+    <script src="https://apis.google.com/js/platform.js" async defer></script>
+</head>
+<body onload="typewriter();">
     <h1>Benny's Website</h1>
     <p style="color: #00ff33; margin:0px;display:inline-block;margin-right:10px;">[Benny~]#</p>
     <div id="typedtext" style="display:inline-block;"> Enter a valid email and password below to login.▋</div>
-    <script src="https://www.gstatic.com/firebasejs/5.9.2/firebase.js"></script>
-<script>
-  // Initialize Firebase
-  var config = {
-    apiKey: "AIzaSyBvmO2EcvKJP9N9Z8ql5429cXMMKqWfJ4Y",
-    authDomain: "server-for-github.firebaseapp.com",
-    databaseURL: "https://server-for-github.firebaseio.com",
-    projectId: "server-for-github",
-    storageBucket: "server-for-github.appspot.com",
-    messagingSenderId: "723374187898"
-  };
-  firebase.initializeApp(config);
-</script>
-<div class="demo-layout mdl-layout mdl-js-layout mdl-layout--fixed-header" style="  margin: auto;
-  width: 100%; position: absolute;">
+        <div class="g-signin2" data-onsuccess="onSignIn" data-theme="dark"></div>
+    <script>
+      function onSignIn(googleUser) {
+        // Useful data for your client-side scripts:
+        var profile = googleUser.getBasicProfile();
+        console.log("ID: " + profile.getId()); // Don't send this directly to your server!
+        console.log('Full Name: ' + profile.getName());
+        console.log('Given Name: ' + profile.getGivenName());
+        console.log('Family Name: ' + profile.getFamilyName());
+        console.log("Image URL: " + profile.getImageUrl());
+        console.log("Email: " + profile.getEmail());
 
-  <!-- Header section containing title -->
-
-  <main class="center" text-anchor="middle" x="50%" y="50%" dy=".35em">
-    <div class="center" text-anchor="middle" x="50%" y="50%" dy=".35em">
-      <div class="center" text-anchor="middle" x="50%" y="50%" dy=".35em">
-        <div class="mdl-card__supporting-text mdl-color-text--grey-600">
-          <p text-anchor="middle">Enter an email and password below</p>
-
- <input class="mdl-textfield__input" style="display:inline;width:auto;" type="text" id="email" name="email" placeholder="Email">
-          &nbsp;&nbsp;&nbsp;
-          <input class="mdl-textfield__input" style="display:inline;width:auto;" type="password" id="password" name="password" placeholder="Password">
-          <br><br>
-          <button disabled="" class="mdl-button mdl-js-button mdl-button--raised" id="quickstart-sign-in" name="signin">Sign In</button>
-          &nbsp;&nbsp;&nbsp;
-          <button class="mdl-button mdl-js-button mdl-button--raised" id="quickstart-sign-up" name="signup">Sign Up</button>
-          &nbsp;&nbsp;&nbsp;
-          <button class="mdl-button mdl-js-button mdl-button--raised" disabled="" id="quickstart-verify-email" name="verify-email">Send Email Verification</button>
-          &nbsp;&nbsp;&nbsp;
-          <button class="mdl-button mdl-js-button mdl-button--raised" id="quickstart-password-reset" name="verify-email">Send Password Reset Email</button>
-          <div class="quickstart-user-details-container" text-anchor="middle" x="50%" y="50%" dy=".35em">
-            Sign-in status: <span id="quickstart-sign-in-status"><a href="mainpage.html">Unknown</a></span>
-        </div>
-      </div>
-    </div>
-  </div></main>
-</div>
-
+        // The ID token you need to pass to your backend:
+        var id_token = googleUser.getAuthResponse().id_token;
+        console.log("ID Token: " + id_token);
+      }
+    </script>
 </body></html>
