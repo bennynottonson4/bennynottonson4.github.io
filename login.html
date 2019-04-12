@@ -1,12 +1,21 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Benny's Page</title>
-      <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<<script src="https://www.gstatic.com/firebasejs/5.9.4/firebase.js"></script>
-<script>
-  // Initialize Firebase
-  var config = {
+  <meta charset=utf-8 />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Log in or sign up</title>
+  <script src="https://www.gstatic.com/firebasejs/5.9.4/firebase-app.js"></script>
+  <!-- Material Design Theming -->
+  <link rel="stylesheet" href="https://code.getmdl.io/1.1.3/material.orange-indigo.min.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+  <script defer src="https://code.getmdl.io/1.1.3/material.min.js"></script>
+
+  <script src="/__/firebase/5.9.3/firebase-app.js"></script>
+  <script src="/__/firebase/5.9.3/firebase-auth.js"></script>
+  <script src="/__/firebase/init.js"></script>
+  <script>
+      var config = {
     apiKey: "AIzaSyCHumgMVt1DOCJ5kTqiunFW3EpC2NwLHeE",
     authDomain: "bennynottonson-5241f.firebaseapp.com",
     databaseURL: "https://bennynottonson-5241f.firebaseio.com",
@@ -15,24 +24,8 @@
     messagingSenderId: "804448012310"
   };
   firebase.initializeApp(config);
-</script>
-<!-- Firebase App is always required and must be first -->
-<script src="https://www.gstatic.com/firebasejs/5.9.4/firebase-app.js"></script>
-
-<!-- Add additional services that you want to use -->
-<script src="https://www.gstatic.com/firebasejs/5.9.4/firebase-auth.js"></script>
-<script src="https://www.gstatic.com/firebasejs/5.9.4/firebase-database.js"></script>
-
-<script>
-  var config = {
-    // ...
-  };
-  firebase.initializeApp(config);
-</script>
-   <script type="text/javascript">
-    /**
-     * Handles the sign in button press.
-     */
+  </script>
+  <script type="text/javascript">
     function toggleSignIn() {
       if (firebase.auth().currentUser) {
         // [START signout]
@@ -158,9 +151,9 @@
           var uid = user.uid;
           var providerData = user.providerData;
           // [START_EXCLUDE]
-          window.location.href = "benny/index";
           document.getElementById('quickstart-sign-in-status').textContent = 'Signed in';
           document.getElementById('quickstart-sign-in').textContent = 'Sign out';
+          document.getElementById('quickstart-account-details').textContent = JSON.stringify(user, null, '  ');
           if (!emailVerified) {
             document.getElementById('quickstart-verify-email').disabled = false;
           }
@@ -170,6 +163,7 @@
           // [START_EXCLUDE]
           document.getElementById('quickstart-sign-in-status').textContent = 'Signed out';
           document.getElementById('quickstart-sign-in').textContent = 'Sign in';
+          document.getElementById('quickstart-account-details').textContent = 'null';
           // [END_EXCLUDE]
         }
         // [START_EXCLUDE silent]
@@ -186,7 +180,7 @@
       initApp();
     };
   </script>
-        <style>
+          <style>
     html, body { padding: 0; margin: 0; font-family: 'Montserrat', helvetica, sans-serif; background: #000; color: #fff; font-size: 20pt; line-height: 1.5; padding: 2%;    max-width: 100%;
     overflow-x: hidden; }
     h1 { margin: 0; padding: 0; }
@@ -226,36 +220,35 @@ function typewriter()
  }
 }
     </script>
+
 </head>
 <body onload="typewriter();">
-    <h1>Benny's Website</h1>
+       <h1>Benny's Website</h1>
     <p style="color: #00ff33; margin:0px;display:inline-block;margin-right:10px;">[Benny~]#</p>
-    <div id="typedtext" style="display:inline-block;"></div>
-    <script src="https://www.gstatic.com/firebasejs/5.9.2/firebase.js"></script>
-<script>
-  // Initialize Firebase
-  var config = {
-    apiKey: "AIzaSyBvmO2EcvKJP9N9Z8ql5429cXMMKqWfJ4Y",
-    authDomain: "server-for-github.firebaseapp.com",
-    databaseURL: "https://server-for-github.firebaseio.com",
-    projectId: "server-for-github",
-    storageBucket: "server-for-github.appspot.com",
-    messagingSenderId: "723374187898"
-  };
-  firebase.initializeApp(config);
-</script>
-<div class="demo-layout mdl-layout mdl-js-layout mdl-layout--fixed-header" style="  margin: auto;
-  width: 100%; position: absolute;">
+    <div id="typedtext" style="display:inline-block;"> Enter a valid email and password below to login.▋</div>
+<div class="demo-layout mdl-layout mdl-js-layout mdl-layout--fixed-header">
 
   <!-- Header section containing title -->
+  <header class="mdl-layout__header mdl-color-text--white mdl-color--light-blue-700">
+    <div class="mdl-cell mdl-cell--12-col mdl-cell--12-col-tablet mdl-grid">
+      <div class="mdl-layout__header-row mdl-cell mdl-cell--12-col mdl-cell--12-col-tablet mdl-cell--8-col-desktop">
+        <a href="/"><h3>Firebase Authentication</h3></a>
+      </div>
+    </div>
+  </header>
 
-  <main class="center" text-anchor="middle" x="50%" y="50%" dy=".35em">
-    <div class="center" text-anchor="middle" x="50%" y="50%" dy=".35em">
-      <div class="center" text-anchor="middle" x="50%" y="50%" dy=".35em">
+  <main class="mdl-layout__content mdl-color--grey-100">
+    <div class="mdl-cell mdl-cell--12-col mdl-cell--12-col-tablet mdl-grid">
+
+      <!-- Container for the demo -->
+      <div class="mdl-card mdl-shadow--2dp mdl-cell mdl-cell--12-col mdl-cell--12-col-tablet mdl-cell--12-col-desktop">
+        <div class="mdl-card__title mdl-color--light-blue-600 mdl-color-text--white">
+          <h2 class="mdl-card__title-text">Firebase Email &amp; Password Authentication</h2>
+        </div>
         <div class="mdl-card__supporting-text mdl-color-text--grey-600">
-          <p text-anchor="middle">Enter an email and password below</p>
+          <p>Enter an email and password below and either sign in to an existing account or sign up</p>
 
- <input class="mdl-textfield__input" style="display:inline;width:auto;" type="text" id="email" name="email" placeholder="Email"/>
+          <input class="mdl-textfield__input" style="display:inline;width:auto;" type="text" id="email" name="email" placeholder="Email"/>
           &nbsp;&nbsp;&nbsp;
           <input class="mdl-textfield__input" style="display:inline;width:auto;" type="password" id="password" name="password" placeholder="Password"/>
           <br/><br/>
@@ -266,10 +259,16 @@ function typewriter()
           <button class="mdl-button mdl-js-button mdl-button--raised" disabled id="quickstart-verify-email" name="verify-email">Send Email Verification</button>
           &nbsp;&nbsp;&nbsp;
           <button class="mdl-button mdl-js-button mdl-button--raised" id="quickstart-password-reset" name="verify-email">Send Password Reset Email</button>
-          <div class="quickstart-user-details-container" class="center" text-anchor="middle" x="50%" y="50%" dy=".35em">
-            Sign-in status: <span id="quickstart-sign-in-status"><a href="mainpage.html">Unknown</a></span>
+
+          <!-- Container where we'll display the user details -->
+          <div class="quickstart-user-details-container">
+            Firebase sign-in status: <span id="quickstart-sign-in-status">Unknown</span>
+            <div>Firebase auth <code>currentUser</code> object value:</div>
+            <pre><code id="quickstart-account-details">null</code></pre>
+          </div>
         </div>
       </div>
+
     </div>
   </main>
 </div>
