@@ -1,142 +1,63 @@
-<!DOCTYPE html><html>
-
-
+<!DOCTYPE html>
+<html>
 <head>
-  <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r79/three.min.js"></script>
-<script>
-     (adsbygoogle = window.adsbygoogle || []).push({
-          google_ad_client: "ca-pub-4628387696445502",
-          enable_page_level_ads: true
-     });
+    <title>Benny's Page</title>
+        <style>
+    html, body { padding: 0; margin: 0; font-family: 'Montserrat', helvetica, sans-serif; background: #000; color: #fff; font-size: 20pt; line-height: 1.5; padding: 2%; }
+    h1 { margin: 0; padding: 0; }
+    </style>
+    <script type="text/javascript">
+        var aText = new Array(
+"Welcome to racer." // add your text
+);
+var iSpeed = 20; 
+var iIndex = 0; 
+var iArrLength = aText[0].length; 
+var iScrollAt = 10; 
+ 
+var iTextPos = 10; 
+var sContents = ''; 
+var iRow; 
+ 
+function typewriter()
+{
+ sContents =  ' ';
+ iRow = Math.max(0, iIndex-iScrollAt);
+ var destination = document.getElementById("typedtext");
+ 
+ while ( iRow < iIndex ) {
+  sContents += aText[iRow++] + '<br />';
+ }
+ destination.innerHTML = sContents + aText[iIndex].substring(0, iTextPos) + "▋";
+ if ( iTextPos++ == iArrLength ) {
+  iTextPos = 0;
+  iIndex++;
+  if ( iIndex != aText.length ) {
+   iArrLength = aText[iIndex].length;
+   setTimeout("typewriter()", 500);
+  }
+ } else {
+  setTimeout("typewriter()", iSpeed);
+ }
+}
+    </script>
+    <script>
+      var arrow_keys_handler = function(e) {
+    switch(e.keyCode){
+        case 37: case 39: case 38:  case 40: // Arrow keys
+        case 32: e.preventDefault(); break; // Space
+        default: break; // do not block other keys
+    }
+};
+window.addEventListener("keydown", arrow_keys_handler, false);
 </script>
-<title>Benny's Page</title>
-<link rel="icon" href="webimg.ico">
-    <link rel="stylesheet" href="filesys/css/bootstrap.min.css" media="screen">
-    <link rel="stylesheet" href="filesys/css/style.css" media="screen">
-    <link rel="stylesheet" href="filesys/css/normalize.css" media="screen">
-    <link rel="stylesheet" href="filesys/css/font-awesome.min.css" media="screen">
-    <link rel="stylesheet" href="filesys/css/media.css" media="screen">
-    <link href="common.css" rel="stylesheet" type="text/css" />
-<style>
-body, a, a:link{cursor:url(images/cursor/cursor.cur), default;} a:hover {cursor:url(images/cursor/cursor2.cur),pointer;} td, th, tr, option, select, label, input, button:hover {cursor:url(images/cursor/cursor2.cur),pointer;}
-</style>
-
-<style>
-@import url(https://fonts.googleapis.com/css?family=Open+Sans:800);
-
-#bgvid{
-        position: fixed;
-        top:50%;
-        left:50%;
-        min-width:100%;
-        min-height:100%;
-        width:auto;
-        height:auto;
-        z-index: -100;
-        -webkit-transform: translateX(-50%) translateY(-50%);
-transform: translateX(-50%) translateY(-50%);
-background-size: cover;
-}
-
-.text {
-    fill: none;
-    stroke-width: 6;
-    stroke-linejoin: round;
-    stroke-dasharray: 70 330;
-    stroke-dashoffset: 0;
-    -webkit-animation: stroke 6s infinite linear;
-    animation: stroke 6s infinite linear;
-}
-
-.text:nth-child(5n + 1) {
-    stroke:  #C313EE;
-    -webkit-animation-delay: -1.2s;
-    animation-delay: -1.2s;
-}
-.text:nth-child(5n + 2) {
-    stroke:  #00FFF3;
-    -webkit-animation-delay: -2.4s;
-    animation-delay: -2.4s;
-}
-
-.text:nth-child(5n + 3) {
-    stroke:  #C423FE;
-    -webkit-animation-delay: -3.6s;
-    animation-delay: -3.6s;
-}
-
-.text:nth-child(5n + 4) {
-    stroke: #FFFFFF;
-    -webkit-animation-delay: -4.8s;
-    animation-delay: -4.8s;
-}
-
-.text:nth-child(5n + 5) {
-    stroke:  #00FFF3;
-    -webkit-animation-delay: -6s;
-    animation-delay: -6s;
-}
-
-@-webkit-keyframes stroke {
-    100% {
-  stroke-dashoffset: -400;
-    }
-}
-
-@keyframes stroke {
-    100% {
-  stroke-dashoffset: -400;
-    }
-}
-
-html, body {
-    height: 100%;
-}
-
-body {
-    background:  #000;
-    background-size: .2em 100%;
-    font: 11.5em/1 Open Sans, Impact;
-    text-transform: uppercase;
-    margin: 0;
-}
-
-svg {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-}
-
-</style>
 </head>
-<body oncontextmenu="return false;" onclick="hitmarker();" unselectable="on" onselectstart="return false;">
-</center></body>
-    <div id="preloader">
-    <div class="loading">
-        <div class="loader"></div>
-    </div>
-    </div>
-    <div id="star" class="video mask"><canvas class="cover"></canvas></div>
-    <section id="home" class="home">
-
-<svg viewBox="0 850 1750 2000">
-    <symbol id="s-text">
-    <text text-anchor="middle" x="50%" y="50%" dy=".35em">Racer</text>=
-    </symbol>
-        <use xlink:href="#s-text" class="text"></use>
-    <use xlink:href="#s-text" class="text"></use>
-    <use xlink:href="#s-text" class="text"></use>
-    <use xlink:href="#s-text" class="text"></use>
-    <use xlink:href="#s-text" class="text"></use>
-</svg>
-    <script src="filesys/js/jquery.js"></script>
-    <script src="filesys/js/bootstrap.min.js"></script> 
-    <script src="filesys/js/modernizr.custom.js"></script>
-    <script src="filesys/js/plugins.min.js"></script>
-    <script src="filesys/js/main.js"></script>
-<footer id="ftr" style="position:fixed; padding-bottom: 0vh; left:0vw; right:0vw; bottom:0vh; background:transparent); text-align:center;"><font face="Courier New" size="4">
-  <table id="controls">
+<body onload="typewriter();">
+    <h1>Benny's Website</h1>
+    <a style="color: #00ff33; margin:0px;display:inline-block;margin-right:10px;" href="login.html">[Benny~]#</a>
+    <div id="typedtext" style="display:inline-block;"></div>
+      
+<table id="controls">
     <tr><td id="fps" colspan="2" align="center"></td></tr>
     <tr>
       <th><label for="resolution">Resolution :</label></th>
@@ -794,15 +715,5 @@ svg {
     //=========================================================================
 
   </script>
-<center style="padding-top: 13.88888888888889vh;"><marquee direction="up" scrollamount="3" height="70" width="200" onmouseover="this.stop()" onmouseout="this.start()"><font color="#ffffff"><center>
-<a href="index">Home Page<br><br></a>
-<a href="racer">Racer<br><br></a>
-</center></marquee></footer>
-<video muted id="bgvid" autoplay="autoplay" loop="loop">
-</head>
-<div class="container" style="height: 100%; display: flex; align-items: center; justify-content: center; margin: 0 auto">
-        <main>
-</body>
-</html> 
 </body>
 </html>
