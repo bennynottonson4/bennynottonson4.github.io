@@ -26,7 +26,7 @@
     <h1>Benny's Website</h1>
     <p style="color: #00ff33; margin:0px;display:inline-block;margin-right:10px;">[Benny~]#</p>
     <div id="typedtext" style="display:inline-block;"> Sign in with google.▋</div>
-        <div class="g-signin2" data-onsuccess="onSignIn" data-theme="dark"></div>
+        <div class="g-signin2" data-onsuccess="onSignIn" data-onsuccess="redirect" data-theme="dark"></div>
     <script>
       function onSignIn(googleUser) {
         // Useful data for your client-side scripts:
@@ -42,6 +42,10 @@
         var id_token = googleUser.getAuthResponse().id_token;
         console.log("ID Token: " + id_token);
       }
-      window.location.replace("http://bennynottonson.com/mainpage.html");
+    </script>
+    <script>
+        function redirect(){
+            window.location.replace("http://bennynottonson.com/mainpage.html");
+        }
     </script>
 </body></html>
