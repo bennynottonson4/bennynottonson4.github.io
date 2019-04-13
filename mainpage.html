@@ -1,59 +1,56 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Benny's Page</title>
-        <style>
-    html, body { padding: 0; margin: 0; font-family: 'Montserrat', helvetica, sans-serif; background: #000; color: #fff; font-size: 20pt; line-height: 1.5; padding: 2%; }
-    h1 { margin: 0; padding: 0; }
-    </style>
-    <script type="text/javascript">
-        var aText = new Array(
-"Welcome to the main page.",
-"Below are all the games you can play." // add your text
-);
-var iSpeed = 20; 
-var iIndex = 0; 
-var iArrLength = aText[0].length; 
-var iScrollAt = 10; 
- 
-var iTextPos = 10; 
-var sContents = ''; 
-var iRow; 
- 
-function typewriter()
-{
- sContents =  ' ';
- iRow = Math.max(0, iIndex-iScrollAt);
- var destination = document.getElementById("typedtext");
- 
- while ( iRow < iIndex ) {
-  sContents += aText[iRow++] + '<br />';
- }
- destination.innerHTML = sContents + aText[iIndex].substring(0, iTextPos) + "▋";
- if ( iTextPos++ == iArrLength ) {
-  iTextPos = 0;
-  iIndex++;
-  if ( iIndex != aText.length ) {
-   iArrLength = aText[iIndex].length;
-   setTimeout("typewriter()", 500);
+  <title>Benny's Page</title>
+  <style>
+     html, body { padding: 0; margin: 0; font-family: 'Montserrat', helvetica, sans-serif; background: #000; color: #fff; font-size: 20pt; line-height: 1.5; padding: 2%; }
+     h1 { margin: 0; padding: 0; }
+  </style>
+  <script type="text/javascript">
+         var aText = new Array(
+  "Welcome to the main page.",
+  "Below are all the games you can play." // add your text
+  );
+  var iSpeed = 20; 
+  var iIndex = 0; 
+  var iArrLength = aText[0].length; 
+  var iScrollAt = 10; 
+
+  var iTextPos = 10; 
+  var sContents = ''; 
+  var iRow; 
+
+  function typewriter()
+  {
+  sContents =  ' ';
+  iRow = Math.max(0, iIndex-iScrollAt);
+  var destination = document.getElementById("typedtext");
+
+  while ( iRow < iIndex ) {
+   sContents += aText[iRow++] + '<br />';
   }
- } else {
-  setTimeout("typewriter()", iSpeed);
- }
-}
-    </script>
+  destination.innerHTML = sContents + aText[iIndex].substring(0, iTextPos) + "▋";
+  if ( iTextPos++ == iArrLength ) {
+   iTextPos = 0;
+   iIndex++;
+   if ( iIndex != aText.length ) {
+    iArrLength = aText[iIndex].length;
+    setTimeout("typewriter()", 500);
+   }
+  } else {
+   setTimeout("typewriter()", iSpeed);
+  }
+  }
+  </script>
 </head>
 <body onload="typewriter();">
-    <h1>Benny's Website</h1>
-    <p style="color: #00ff33; margin:auto;display:inline-block;" href="racer.html">[Benny~]#</p>
-    <div id="typedtext" style="display:inline-block;"></div>
-    <footer style="width: 100%; bottom: 0; position: fixed;">
-      <ul>
-        <a style="color: #00ff33; margin:auto;display:inline-block; width:20%;" href="racer.html">Racer</a>
-        <a style="color: #00ff33; margin:auto;display:inline-block; width:20%;" href="snake.html">Snake</a>
-        <a style="color: #00ff33; margin:auto;display:inline-block; width:20%;" href="">Coming Soon</a>
-        <a style="color: #00ff33; margin:auto;display:inline-block; width:20%;" href="">Coming Soon</a>
-      </ul>
-    </footer>
+  <h1>Benny's Website</h1>
+  <p style="color: #00ff33; margin:auto;display:inline-block;">[Benny~]#</p>
+  <div id="typedtext" style="display:inline-block;"></div>
+  <footer style="width: 100%; bottom: 0; position: fixed;">
+    <div style="margin-left: 2em">
+      <a href="racer.html" style="color: #00ff33; margin:auto;display:inline-block; width:20%;">Racer</a> <a href="snake.html" style="color: #00ff33; margin:auto;display:inline-block; width:20%;">Snake</a> <a href="tetris.html" style="color: #00ff33; margin:auto;display:inline-block; width:20%;">Tetris</a> <a href="" style="color: #00ff33; margin:auto;display:inline-block; width:20%;">Coming Soon</a>
+    </div>
+  </footer>
 </body>
 </html>
