@@ -18,6 +18,41 @@
   };
   firebase.initializeApp(config);
 </script>
+    <script type="text/javascript">
+        var aText = new Array(
+"Sign in with google." // add your text
+);
+var iSpeed = 20; 
+var iIndex = 0; 
+var iArrLength = aText[0].length; 
+var iScrollAt = 10; 
+ 
+var iTextPos = 10; 
+var sContents = ''; 
+var iRow; 
+ 
+function typewriter()
+{
+ sContents =  ' ';
+ iRow = Math.max(0, iIndex-iScrollAt);
+ var destination = document.getElementById("typedtext");
+ 
+ while ( iRow < iIndex ) {
+  sContents += aText[iRow++] + '<br />';
+ }
+ destination.innerHTML = sContents + aText[iIndex].substring(0, iTextPos) + "▋";
+ if ( iTextPos++ == iArrLength ) {
+  iTextPos = 0;
+  iIndex++;
+  if ( iIndex != aText.length ) {
+   iArrLength = aText[iIndex].length;
+   setTimeout("typewriter()", 500);
+  }
+ } else {
+  setTimeout("typewriter()", iSpeed);
+ }
+}
+    </script>
     <meta name="google-signin-scope" content="profile email">
     <meta name="google-signin-client_id" content="804448012310-csb1db85cgv2759hd8lpetc0r0d1sabp.apps.googleusercontent.com">
     <script src="https://apis.google.com/js/platform.js" async defer></script>
@@ -25,7 +60,7 @@
 <body onload="typewriter();">
     <h1>Benny's Website</h1>
     <p style="color: #00ff33; margin:0px;display:inline-block;margin-right:10px;">[Benny~]#</p>
-    <div id="typedtext" style="display:inline-block;"> Sign in with google.▋</div>
+    <div id="typedtext" style="display:inline-block;"></div>
         <div class="g-signin2" data-onsuccess="onSignIn" data-onsuccess="redirect" data-theme="dark"></div>
     <script>
       function onSignIn(googleUser) {
