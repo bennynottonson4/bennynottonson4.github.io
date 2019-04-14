@@ -14,6 +14,42 @@ canvas {
   border: 1px solid white;
 }
 </style>
+  <script type="text/javascript">
+         var aText = new Array(
+  "Welcome to space invaders.",
+  "<-- Click here to go home"// add your text
+  );
+  var iSpeed = 20; 
+  var iIndex = 0; 
+  var iArrLength = aText[0].length; 
+  var iScrollAt = 10; 
+
+  var iTextPos = 10; 
+  var sContents = ''; 
+  var iRow; 
+
+  function typewriter()
+  {
+  sContents =  ' ';
+  iRow = Math.max(0, iIndex-iScrollAt);
+  var destination = document.getElementById("typedtext");
+
+  while ( iRow < iIndex ) {
+   sContents += aText[iRow++] + '<br />';
+  }
+  destination.innerHTML = sContents + aText[iIndex].substring(0, iTextPos) + "▋";
+  if ( iTextPos++ == iArrLength ) {
+   iTextPos = 0;
+   iIndex++;
+   if ( iIndex != aText.length ) {
+    iArrLength = aText[iIndex].length;
+    setTimeout("typewriter()", 500);
+   }
+  } else {
+   setTimeout("typewriter()", iSpeed);
+  }
+  }
+  </script>
    <script type="text/javascript">
     window.addEventListener("keydown", function(e) {
        // space and arrow keys
@@ -777,7 +813,9 @@ window.onload = function() {
 };
 </script>
 </head>
-<body>
+<body onload="typewriter();">
+  <a href="login.html" style="color: #00ff33; margin:0px;display:inline-block;margin-right:10px;">[Benny~]#</a>
+  <div id="typedtext" style="display:inline-block;"></div>
 	    <div style="float:left;">
         <h1>Space Invaders</h1></div>
             <div style="overflow:hidden;">

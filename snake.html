@@ -10,9 +10,47 @@
         width:25%;
      }
   </style>
+    <script type="text/javascript">
+         var aText = new Array(
+  "Welcome to snake.",
+  "<-- Click here to go home"// add your text
+  );
+  var iSpeed = 20; 
+  var iIndex = 0; 
+  var iArrLength = aText[0].length; 
+  var iScrollAt = 10; 
+
+  var iTextPos = 10; 
+  var sContents = ''; 
+  var iRow; 
+
+  function typewriter()
+  {
+  sContents =  ' ';
+  iRow = Math.max(0, iIndex-iScrollAt);
+  var destination = document.getElementById("typedtext");
+
+  while ( iRow < iIndex ) {
+   sContents += aText[iRow++] + '<br />';
+  }
+  destination.innerHTML = sContents + aText[iIndex].substring(0, iTextPos) + "▋";
+  if ( iTextPos++ == iArrLength ) {
+   iTextPos = 0;
+   iIndex++;
+   if ( iIndex != aText.length ) {
+    iArrLength = aText[iIndex].length;
+    setTimeout("typewriter()", 500);
+   }
+  } else {
+   setTimeout("typewriter()", iSpeed);
+  }
+  }
+  </script>
 </head>
 <body onload="typewriter();">
   <h1>Snake</h1>
+  <a href="login.html" style="color: #00ff33; margin:0px;display:inline-block;margin-right:10px;">[Benny~]#</a>
+  <div id="typedtext" style="display:inline-block;"></div>
   <canvas class="center" height="400" id="game" width="400"></canvas>
   <script>
      var canvas = document.getElementById('game');
