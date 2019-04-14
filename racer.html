@@ -4,42 +4,6 @@
   <title>Racer</title>
     <link rel="stylesheet" type="text/css" href="styles.css">
       <link rel="icon" href="favicon.ico" type="image/x-icon">
-  <script type="text/javascript">
-         var aText = new Array(
-  "Welcome to racer.",
-  "<-- Click here to go home"// add your text
-  );
-  var iSpeed = 20; 
-  var iIndex = 0; 
-  var iArrLength = aText[0].length; 
-  var iScrollAt = 10; 
-
-  var iTextPos = 10; 
-  var sContents = ''; 
-  var iRow; 
-
-  function typewriter()
-  {
-  sContents =  ' ';
-  iRow = Math.max(0, iIndex-iScrollAt);
-  var destination = document.getElementById("typedtext");
-
-  while ( iRow < iIndex ) {
-   sContents += aText[iRow++] + '<br />';
-  }
-  destination.innerHTML = sContents + aText[iIndex].substring(0, iTextPos) + "▋";
-  if ( iTextPos++ == iArrLength ) {
-   iTextPos = 0;
-   iIndex++;
-   if ( iIndex != aText.length ) {
-    iArrLength = aText[iIndex].length;
-    setTimeout("typewriter()", 500);
-   }
-  } else {
-   setTimeout("typewriter()", iSpeed);
-  }
-  }
-  </script>
   <script>
        var arrow_keys_handler = function(e) {
      switch(e.keyCode){
@@ -51,9 +15,8 @@
   window.addEventListener("keydown", arrow_keys_handler, false);
   </script>
 </head>
-<body onload="typewriter();">
-  <h1>Benny's Website</h1><a href="login.html" style="color: #00ff33; margin:0px;display:inline-block;margin-right:10px;">[Benny~]#</a>
-  <div id="typedtext" style="display:inline-block;"></div>
+<body>
+  <h1>Racer</h1>
   <table id="controls">
     <tr>
       <td align="center" colspan="2" id="fps"></td>
