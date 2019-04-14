@@ -37,8 +37,8 @@ padding-bottom:2px;
 
 .button {
   display: inline-block;
-  border-radius: 4px;
-  background-color: #000;
+  border-radius: 0px;
+  background-color: rgba(0, 0, 0,0);
   border: none;
   color: #00ff33;
   text-align: center;
