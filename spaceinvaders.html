@@ -2,8 +2,8 @@
 <html>
 <head>
 	<title>Galiga</title>
+      <link rel="stylesheet" type="text/css" href="styles.css">
 	<style>
-
 canvas {
   
   image-rendering: optimizeSpeed;
@@ -11,30 +11,12 @@ canvas {
   image-rendering: -webkit-optimize-contrast;
   image-rendering: optimize-contrast
 }
-           canvas {
-       display: block;
-       margin: auto;
-       margin-left: 10vw;
-       border: 1px solid white;
+canvas {
+  display: block;
+  margin: auto;
+  margin-left: 10vw;
+  border: 1px solid white;
     }
-
-    #playbutton {
-       width: 100px;
-       height: 50px;
-       display: block;
-       margin: auto;
-       margin-top: 10px;
-       font-family: Arial, sans-serif;
-       font-size: 30px;
-       font-weight: bold;
-       background-color: white;
-       cursor: pointer;
-    }
-    html, body { padding: 0; margin: 0; font-family: 'Montserrat', helvetica, sans-serif; background: #000; color: #fff; font-size: 20pt; line-height: 1.5; padding: 2%; }
-       h1 { margin: 0; padding: 0; }
-       button {
-           padding-bottom:2px;
-       }
 </style>
    <script type="text/javascript">
     window.addEventListener("keydown", function(e) {
@@ -805,11 +787,11 @@ window.onload = function() {
             <div style="overflow:hidden;">
 <canvas id="game-canvas" width="640" height="640" class="center2"></canvas></div>
    <footer style="width: 100%; bottom: 0; position: fixed;">
-                <div style="margin-left: 2em">
-            <a href="racer.html" style="color: #00ff33; margin:auto;display:inline-block; width:20%;"><button>Racer</button></a>
-            <a href="snake.html" style="color: #00ff33; margin:auto;display:inline-block; width:20%;"><button>Snake</button></a> 
-            <a href="tetris.html" style="color: #00ff33; margin:auto;display:inline-block; width:20%;"><button>Tetris</button></a> 
-            <a href="spaceinvaders.html" style="color: #00ff33; margin:auto;display:inline-block; width:20%;"><button>Space Invaders</button></a>
+        <div style="margin-left: 2em">
+            <a href="racer.html" style="color: #00ff33; margin:auto;display:inline-block; width:20%;"><button class="button" style="vertical-align:middle"><span>Racer</span></button></a>
+            <a href="snake.html" style="color: #00ff33; margin:auto;display:inline-block; width:20%;"><button class="button" style="vertical-align:middle"><span>Snake</span></button></a> 
+            <a href="tetris.html" style="color: #00ff33; margin:auto;display:inline-block; width:20%;"><button class="button" style="vertical-align:middle"><span>Tetris</span></button></a> 
+            <a href="spaceinvaders.html" style="color: #00ff33; margin:auto;display:inline-block; width:20%;"><button class="button" style="vertical-align:middle"><span>Space Invaders</span></button></a>
         </div>
     </footer>
 </body>
