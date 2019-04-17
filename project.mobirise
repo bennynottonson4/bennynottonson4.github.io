@@ -1,7 +1,7 @@
 {
   "settings": {
     "name": "Site1",
-    "currentPage": "aboutsite.html",
+    "currentPage": "media.html",
     "theme": {
       "name": "mobirise4",
       "title": "Mobirise 4",
@@ -2748,7 +2748,7 @@
                 "title": "",
                 "customStyle1": "display-7",
                 "caption": "Solo - \"Changes\"",
-                "active": true
+                "active": false
               },
               {
                 "tags": "Responsive",
@@ -2826,20 +2826,7 @@
                 "title": "",
                 "customStyle1": "display-7",
                 "caption": "Type caption here",
-                "active": false
-              },
-              {
-                "tags": "Animated",
-                "videoPreview": "@THEME_PATH@/components/_images/gallery/preview.jpg",
-                "playVideo": false,
-                "videoUrl": "https://www.youtube.com/watch?v=fwkKc6M60-0",
-                "image": "@THEME_PATH@/components/_images/background8.jpg",
-                "thumb": "@THEME_PATH@/components/_images/background8.jpg",
-                "alt": "",
-                "title": "",
-                "customStyle1": "display-7",
-                "caption": "Type caption here",
-                "active": false
+                "active": true
               }
             ]
           }
