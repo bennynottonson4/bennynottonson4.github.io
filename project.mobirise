@@ -42,7 +42,9 @@
     "robotsSwitcher": "on",
     "siteUrl": "https://bennynottonson.com",
     "sitemapSwitcherAuto": "on",
-    "sitemapSwitcher": "on"
+    "sitemapSwitcher": "on",
+    "publishType": "local",
+    "publishPath": "file:///C:/Users/benny/OneDrive/Documents/GitHub/BennyNottonson.github.io"
   },
   "pages": {
     "index.html": {
